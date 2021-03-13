@@ -2,17 +2,21 @@
 \usepackage[slovene]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
+\usepackage[a4paper, total={17cm, 25cm}]{geometry}
 \usepackage{lmodern}
 \usepackage{amsmath,amsfonts}
 \usepackage{amsthm}
-\usepackage[a4paper, total={17cm, 25cm}]{geometry}
+\usepackage{setspace}
 
 \theoremstyle{definition}
 \newtheorem{definicija}{Definicija}
 \theoremstyle{plain}
 \newtheorem{izrek}{Izrek}
+\newtheorem{zgled}{Zgled}
 
 \newenvironment{dokaz}{\begin{proof}[\bfseries\upshape\proofname]}{\end{proof}}
+
+\setstretch{1.2}
 
 \begin{document}
 
@@ -40,9 +44,16 @@ V prvem letniku smo se pri analizi naučili, da iz $a_n \rightarrow a$ sledi $a_
 
 \section{Cesaro zveznost}
 Sedaj se lahko končno lotimo Cesaro zveznosti.
+
 \begin{definicija}
     Funkcija $f: \mathbb{R} \rightarrow \mathbb{R}$ je Cesaro zvezna v točki $a \in \mathbb{R}$, če za vsako zaporedje $(a_n)$, ki Cesaro konvergira proti $a$, zaporedje $(f(a_n))$ Cesaro konvergira proti $f(a)$. Pravimo, da je $f$ zvezna, če je zvezna v vsaki točki $a \in \mathbb{R}$.
 \end{definicija}
+
+Da si bomo lažje predstavljali, katere funkcije so Cesaro zvezne, si najprej oglejmo kakšen primer.
+\begin{zgled}
+    Pokazati želimo, da je vsaka funkcija oblike $f(x) = Ax + B$, kjer sta $A, B \in \mathbb{R}$, Cesaro zvezna. (TODO)
+\end{zgled}
+
 \begin{izrek}
     Naj bo $f: \mathbb{R} \rightarrow \mathbb{R}$ funkcija. Naslednje trditve so ekvivalentne.
     \begin{enumerate}
@@ -52,9 +63,21 @@ Sedaj se lahko končno lotimo Cesaro zveznosti.
     \end{enumerate}
 \end{izrek}
 \begin{dokaz}
-    $(1) \rightarrow (3):$ Naj bo funkcija $g: \mathbb{R} \rightarrow \mathbb{R}$ definirana s predpisom $g(x) = f(x) - f(0)$. Potem je $g$ Cesaro zvezna v točki $0$ in velja $g(0) = 0$. 
+    $(1) \rightarrow (3): $ Naj bo funkcija $g: \mathbb{R} \rightarrow \mathbb{R}$ definirana s predpisom $g(x) = f(x) - f(0)$. Potem je $g$ Cesaro zvezna v točki $0$ in velja $g(0) = 0$. 
     Naj bo $a \in \mathbb{R}$ poljubno realno število. Ker zaporedje $a, -a, a, -a, a, \ldots$ Cesaro konvergira proti $0$ in je $g$ Cesaro zvezna v $0$, zaporedje $g(a), g(-a), g(a), g(-a), \ldots$ Cesaro konvergira proti $g(0) = 0$. Potem mora veljati $g(a) + g(-a) = 0$ oziroma $g(-a) = -g(a)$. 
-    Naj bosta zdaj $b, c \in \mathbb{R}$ poljubni realni števili. Spet zaporedje $b, c, -(b+c), b, c, -(b+c), \ldots$ Cesaro konvergira k $0$, zato zaporedje $g(b), g(c), g(-(b+c)), g(b), \ldots$ Cesaro konvergira proti $g(0) = 0$. Sledi () 
+    Naj bosta zdaj $b, c \in \mathbb{R}$ poljubni realni števili. Spet zaporedje $b, c, -(b+c), b, c, -(b+c), \ldots$ Cesaro konvergira k $0$, zato zaporedje $g(b), g(c), g(-(b+c)), g(b), \ldots$ Cesaro konvergira proti $g(0) = 0$. Sledi $g(b) + g(c) + g(-(b+c)) = 0$ oziroma $-(g(b) + g(c)) = g(-(b+c))$. Upoštevamo še, da je velja $g(-a) = -g(a)$ za vsak $a \in \mathbb{R}$ in dobimo $g(b) + g(c) = g(b+c)$. Torej je $g$ aditivna.
+
+    Naslednji cilj je pokazati, da velja $g(\lambda x) = \lambda g(x)$ za vse $\lambda \in \mathbb{Q}$ in $x \in \mathbb{R}$. Za primer ko je $\lambda \in \mathbb{N}$ to sledi neposredno iz aditivnosti. Ker velja tudi $g(0) = 0$ in $g(-a) = -g(a)$, to velja celo za vse $\lambda \in \mathbb{Z}$. Naj bo zdaj $\frac{m}{n} \in \mathbb{Q}$ poljubno racionalno število. Velja $mg(x) = g(mx) = g(n\frac{m}{n}x) = ng(\frac{m}{n}x)$ oziroma $\frac{m}{n}g(x) = g(\frac{m}{n}x)$, kar smo želeli dokazati.
+
+    Pokažimo zdaj, da je $g$ zvezna. Naj bo $(x_n)$ poljubno zaporedje, da je $x_n \rightarrow 0$. Poiščimo zaporedje $(y_n)$, katerega zaporedje aritmetičnih sredin je enako $(x_n)$. Očitno mora biti $y_1 = x_1$. Denimo, da smo že definirali $y_1, \ldots, y_n$ in da velja $x_k = \overline{y}_k$ za vse $k \leq n$. Da bo veljalo tudi $x_{n+1} = \overline{y}_{n+1}$ oziroma $x_{n+1} = \frac{y_1 + \ldots + y_{n+1}}{n+1}$, moramo vzeti $y_{n+1} = (n+1)x_{n+1} - (y_1 + \ldots + y_n)$. Tako definirano zaporedje $(y_n)$ res zadošča $x_n = \overline{y}_n$ za vse $n \in \mathbb{N}$. Ker je $x_n \rightarrow 0$, je $y_n \leadsto 0$ po definiciji, zato iz Cesaro zveznosti funkcije $g$ v $0$ sledi $g(y_n) \leadsto g(0) = 0$. Iz tega, kar smo pokazali v prejšnjih odstavkih, sledi 
+    $$g(x_n) = g(\overline{y}_n) = g(\frac{y_1 + \ldots + y_n}{n}) = \frac{g(y_1) + \ldots + g(y_n)}{n} \rightarrow 0.$$
+    Torej je $g$ zvezna v $0$. Ker je $g(x_0 + x) = g(x_0) + g(x)$, je zvezna tudi v vsaki drugi točki $x_0 \in \mathbb{R}$.
+
+    Naj bo $A = g(1)$. Zevezni funkciji $g$ in $x \mapsto Ax$ se ujemata na $\mathbb{Q}$, ki je gosta podmnožica v $\mathbb{R}$, torej sta enaki. Če vzamemo $B = f(0)$, velja $f(x) = Ax + B$ za vse $x \in \mathbb{R}$. S tem je implikacija dokazana.
+
+    $(3) \rightarrow (2): $ To smo pokazali v zgornjem zgledu.
+
+    $(2) \rightarrow (1): $ Če je $f$ Cesaro zvezna, je po definiciji Cesaro zvezna tudi v točki $0$.
 \end{dokaz}
 
 

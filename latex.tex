@@ -8,6 +8,11 @@
 \usepackage{amsthm}
 \usepackage{setspace}
 
+\def\N{\mathbb{N}}
+\def\Z{\mathbb{Z}}
+\def\Q{\mathbb{Q}}
+\def\R{\mathbb{R}}
+
 \theoremstyle{definition}
 \newtheorem{definicija}{Definicija}
 \theoremstyle{plain}
@@ -78,7 +83,7 @@ Kot smo ugotovili, je vsaka funkcija oblike $f(x) = Ax + B$ Cesaro zvezna. Izka�
     \end{enumerate}
 \end{izrek}
 \begin{dokaz}
-    $(1) \rightarrow (3): $ Naj bo funkcija $g: \mathbb{R} \rightarrow \mathbb{R}$ definirana s predpisom $g(x) = f(x) - f(0)$. Potem je $g$ Cesaro zvezna v točki $0$ in velja $g(0) = 0$. 
+    $(1) \Rightarrow (3): $ Naj bo funkcija $g: \mathbb{R} \rightarrow \mathbb{R}$ definirana s predpisom $g(x) = f(x) - f(0)$. Potem je $g$ Cesaro zvezna v točki $0$ in velja $g(0) = 0$. 
     Naj bo $a \in \mathbb{R}$ poljubno realno število. Ker zaporedje $a, -a, a, -a, a, \ldots$ Cesaro konvergira proti $0$ in je $g$ Cesaro zvezna v $0$, zaporedje $g(a), g(-a), g(a), g(-a), \ldots$ Cesaro konvergira proti $g(0) = 0$. Potem mora veljati $g(a) + g(-a) = 0$ oziroma $g(-a) = -g(a)$. 
     Naj bosta zdaj $b, c \in \mathbb{R}$ poljubni realni števili. Spet zaporedje $b, c, -(b+c), b, c, -(b+c), \ldots$ Cesaro konvergira k $0$, zato zaporedje $g(b), g(c), g(-(b+c)), g(b), \ldots$ Cesaro konvergira proti $g(0) = 0$. Sledi $g(b) + g(c) + g(-(b+c)) = 0$ oziroma $-(g(b) + g(c)) = g(-(b+c))$. Upoštevamo še, da je velja $g(-a) = -g(a)$ za vsak $a \in \mathbb{R}$ in dobimo $g(b) + g(c) = g(b+c)$. Torej je $g$ aditivna.
 
@@ -90,9 +95,9 @@ Kot smo ugotovili, je vsaka funkcija oblike $f(x) = Ax + B$ Cesaro zvezna. Izka�
 
     Naj bo $A = g(1)$. Zevezni funkciji $g$ in $x \mapsto Ax$ se ujemata na $\mathbb{Q}$, ki je gosta podmnožica v $\mathbb{R}$, torej sta enaki. Če vzamemo $B = f(0)$, velja $f(x) = Ax + B$ za vse $x \in \mathbb{R}$. S tem je implikacija dokazana.
 
-    $(3) \rightarrow (2): $ To smo pokazali v zgornjem zgledu.
+    $(3) \Rightarrow (2): $ To smo pokazali v zgornjem zgledu.
 
-    $(2) \rightarrow (1): $ Če je $f$ Cesaro zvezna, je po definiciji Cesaro zvezna tudi v točki $0$.
+    $(2) \Rightarrow (1): $ Če je $f$ Cesaro zvezna, je po definiciji Cesaro zvezna tudi v točki $0$.
 \end{dokaz}
 
 
@@ -117,10 +122,32 @@ Oglejmo si nekaj primerov funkcij in poskusimo ugotoviti, če so Cesaro odvedlji
 
 Vemo že, da je $f: \mathbb{R} \rightarrow \mathbb{R}$ zvezna v točki $a \in \mathbb{R}$ natanko tedaj, ko obstaja limita $f$ v točki $a$ in je ta limita enaka $f(a)$. Podobno velja tudi za Cesaro zveznost, kar nam pove naslednja lema.
 \begin{lema}
-    Naj bo $f: \mathbb{R} \rightarrow \mathbb{R}$ funkcija. Naj za vsako zaporedje $(a_n)$ s členi različnimi od $0$, ki Cesaro konvergira proti $0$, velja $f(a_n) \leadsto f(0)$. Potem je $f$ Cesaro zvezno v točki $0$.
+    Naj bo $f: \mathbb{R} \rightarrow \mathbb{R}$ funkcija. Naj za vsako zaporedje $(a_n)$ s členi različnimi od $0$, ki Cesaro konvergira proti $0$, velja $f(a_n) \leadsto f(0)$. Potem je $f$ Cesaro zvezna v točki $0$.
 \end{lema}
 \begin{dokaz}
-    (TODO)
+    Predpostaviti smemo, da velja $f(0) = 0$. Podobno kot pri dokazu izreka lahko dokažemo, da velja $f(a+b) = f(a) + f(b)$ za neničelna $a, b \in \mathbb{R}$. Če je katero od obeh števil enako $0$, pa to velja trivialno. Torej je $f$ aditivna. 
+    
+    Naj bo $(a_n)$ poljubno zaporedje, za katero velja $a_n \leadsto 0$. Pokazati želimo, da velja $f(a_n) \leadsto f(0) = 0$. To bomo storili tako, da bomo skonstruirali zaporedje $(b_n)$ s členi različnimi od $0$, ki se bo malo razlikovalo od zaporedja $(a_n)$, tako da bo veljalo $a_n - b_n \leadsto 0$ in $f(a_n) - f(b_n) \leadsto 0$.
+
+    Ker je množica $\R$ neštevna, množica $\{a_n \mid n \in \N\} \cup \{-a_n \mid n \in \N\}$ pa števna, lahko izberemo $\delta \in \R$, da za vsak $n \in \N$ velja $\delta \neq a_n$ in $\delta \neq -a_n$. Definirajmo $b_n = a_n + (-1)^n \delta$. Za vse $n \in \N$ je $b_n \neq 0$, torej je $(b_n)$ zaporedje z neničelnimi členi. Če je $n$ sod, velja $b_1 + \ldots + b_n = a_1 + \ldots a_n$, če je $n$ lih, pa je $b_1 + \ldots + b_n = a_1 + \ldots a_n - \delta$. Od tod sledi
+    $$
+    \overline{a}_n - \overline{b}_n = \begin{cases}
+        0; & n \ \text{sod}\\
+        \frac{\delta}{n}; & n \ \text{lih},
+    \end{cases}
+    $$
+    torej je $\overline{a}_n - \overline{b}_n \rightarrow 0$. Ker zaporedje $(\overline{a}_n)$ konvergira k 0, enako velja za zaporedje $(\overline{b}_n)$, to pa lahko drugače zapišemo kot $b_n \leadsto 0$.
+
+    Zaradi aditivnosti $f$ velja $f(b_n) = f(a_n + (-1)^n \delta) = f(a_n) + f((-1)^n \delta) = f(a_n) + (-1)^n f(\delta)$. Za sod $n$ potem velja $f(b_1) + \ldots + f(b_n) = f(a_1) + \ldots f(a_n)$, za lih $n$ pa $f(b_1) + \ldots + f(b_n) = f(a_1) + \ldots f(a_n) - f(\delta)$. Podobno kot prej sledi
+    $$
+    \overline{f(a_n)} - \overline{f(b_n)} = \begin{cases}
+        0; & n \ \text{sod}\\
+        \frac{f(\delta)}{n}; & n \ \text{lih},
+    \end{cases}
+    $$
+    torej je $\overline{f(a_n)} - \overline{f(b_n)} \rightarrow 0$ oziroma $f(a_n) - f(b_n) \leadsto 0$.
+
+    Pokazali smo že, da zaporedje $(b_n)$ Cesaro konvergira k $0$, ker pa ima le neničelne člene, po predpostavki velja $f(b_n) \leadsto f(0) = 0$. Ker velja tudi $f(a_n) - f(b_n) \leadsto 0$, lahko zaključimo, da $(f(a_n))$ cesaro konvergira k $0$, torej je $f$ res Cesaro zvezna v točki $0$.
 \end{dokaz}
 
 \begin{izrek}
@@ -132,21 +159,21 @@ Vemo že, da je $f: \mathbb{R} \rightarrow \mathbb{R}$ zvezna v točki $a \in \m
     \end{enumerate}
 \end{izrek}
 \begin{dokaz}
-    $(1) \rightarrow (3): $ Definiramo funkcijo $: \mathbb{R} \rightarrow \mathbb{R}$ s predpisom 
+    $(1) \Rightarrow (3): $ Definiramo funkcijo $: \mathbb{R} \rightarrow \mathbb{R}$ s predpisom 
     $$
     g(x) = \begin{cases}
         \frac{f(x)-f(0)}{x}; & x \neq 0\\
-        f'(0); & x = 0
-    \end{cases}.
+        f'(0); & x = 0.
+    \end{cases}
     $$
     Naj bo $(a_n)$ zaporedje s členi različnimi od $0$, da velja $a_n \leadsto 0$. Potem velja 
     $$g(a_n) = \frac{f(a_n)-f(0)}{a_n-0} \leadsto f'(0) = g(0),$$
     po definiciji Cesaro odvoda $f$ v točki $0$. Po lemi je $g$ Cesaro zvezna v točki $0$, zato je po izreku oblike $g(x) = Ax + B$ za neka $A, B \in \mathbb{R}$. Potem pa je 
     $f(x) = xg(x) + f(0) = Ax^2 + Bx + C$ za $C = f(0)$.
 
-    $(3) \rightarrow (2): $ To smo pokazali v zgornjem zgledu.
+    $(3) \Rightarrow (2): $ To smo pokazali v zgornjem zgledu.
 
-    $(2) \rightarrow (1): $ Če je $f$ Cesaro odvedljiva, je po definiciji Cesaro odvedljiva tudi v točki $0$.
+    $(2) \Rightarrow (1): $ Če je $f$ Cesaro odvedljiva, je po definiciji Cesaro odvedljiva tudi v točki $0$.
 \end{dokaz}
 Končno smo klasificirali Cesaro zvezne in Cesaro odvedljive funkcije. Opazimo, da obstajajo funkcije, ki so Cesaro odvedljive, ampak niso Cesaro zvezne. Takšna funkcije je naprimer $x \mapsto x^2$. To je presenetljivo, saj vemo, da za funkcije iz odvedljivosti sledi zveznost. Pri Cesaro zveznih in Cesaro odvedljivih funkcijah pa temu ni tako.
 

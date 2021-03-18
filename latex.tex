@@ -23,6 +23,8 @@
 \newenvironment{dokaz}{\begin{proof}[\bfseries\upshape\proofname]}{\end{proof}}
 \newenvironment{zgled}{\begin{proof}[\bfseries\upshape Zgled]}{\end{proof}}
 
+\newcommand{\geslo}[2]{\noindent \textbf{#1} \quad #2 \hfill \break}
+
 \setstretch{1.2}
 
 \title{Cesaro zveznost in odvedljivost \\ Seminar}
@@ -176,6 +178,21 @@ Vemo že, da je $f: \mathbb{R} \rightarrow \mathbb{R}$ zvezna v točki $a \in \m
     $(2) \Rightarrow (1): $ Če je $f$ Cesaro odvedljiva, je po definiciji Cesaro odvedljiva tudi v točki $0$.
 \end{dokaz}
 Končno smo klasificirali Cesaro zvezne in Cesaro odvedljive funkcije. Opazimo, da obstajajo funkcije, ki so Cesaro odvedljive, ampak niso Cesaro zvezne. Takšna funkcije je naprimer $x \mapsto x^2$. To je presenetljivo, saj vemo, da za funkcije iz odvedljivosti sledi zveznost. Pri Cesaro zveznih in Cesaro odvedljivih funkcijah pa temu ni tako.
+
+
+
+\section*{Angleško-slovenski slovar strokovnih izrazov}
+\geslo{convergence}{konvergenca}
+\geslo{continuity}{zveznost}
+\geslo{differentiability}{odvedljivost}
+
+
+\begin{thebibliography}{1}
+    \bibitem{1}
+    J.~A.~Hocutt in P.~L.~Robinson, \emph{Everywhere Differentiable, Nowhere Continuous Functions}, Amer.~Math.~Monthly \textbf{125} (2018) 923--928.
+    \bibitem{2}
+    P.~R.~Halmos, \emph{Problems for Mathematicians, Young and Old}, Dolciani Mathematical Expositions \textbf{12}, Mathematical Association of America, Washington, 1991.
+\end{thebibliography}
 
 
 \end{document}

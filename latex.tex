@@ -53,7 +53,7 @@ V prvem letniku smo se pri analizi naučili, da iz $a_n \rightarrow a$ sledi $a_
 
 \subsection*{Primeri}
 \begin{enumerate}
-    \item Poiščimo primer omejenega zaporedja, ki ni Cesaro konvergentno. Prvi člen naj bo enak $2$. Naslednjih nekaj členov bo enakih $-2$. Takih členov mora biti dovolj, da bo aritmetična sredina padla pod $-1$. Nato spet dodajmo dovolj členov enakih $2$, da bo aritmetična sredina narasla nad $1$. S ponavljanjem take kostrukcije dobimo omejeno zaporedje, ki ni Cesaro konvergentno, saj zaporedje aritmetičnih sredin nekako oscilira med $-1$ in $1$.
+    \item Poiščimo primer omejenega zaporedja, ki ni Cesaro konvergentno. Prvi člen naj bo enak $2$. Naslednjih nekaj členov bo enakih $-2$. Takih členov mora biti dovolj, da bo aritmetična sredina padla pod $-1$. Nato spet dodajmo dovolj členov enakih $2$, da bo aritmetična sredina narasla nad $1$. S ponavljanjem take konstrukcije dobimo omejeno zaporedje, ki ni Cesaro konvergentno, saj zaporedje aritmetičnih sredin nekako oscilira med $-1$ in $1$.
     \item Naj bo $m \in \mathbb{N}$ in $a_1, a_2, \ldots, a_m \in \mathbb{R}$. Zanima nas, kdaj zaporedje $a_1, a_2, \ldots, a_m, a_1, a_2, \ldots$ Cesaro konvergira proti $0$. Naj bo $A := a_1 + a_2 + \ldots + a_m$. Ker za vse $k \in \mathbb{N}$ velja $\overline{a}_{km} = A$, je enakost $A = 0$ potreben pogoj za $a_n \leadsto 0$. Naj bo torej $A = 0$. Zaporedje delnih vsot zaporedja $(a_n)$ je potem periodično, zato je omejeno. Sledi, da zaporedje aritmetičnih sredin konvergira proti $0$. Torej $(a_n)$ konvergira proti $0$ natanko tedaj, ko velja $A = 0$.
 \end{enumerate}
 
@@ -95,7 +95,7 @@ Kot smo ugotovili, je vsaka funkcija oblike $f(x) = Ax + B$ Cesaro zvezna. Izka�
     $$g(x_n) = g(\overline{y}_n) = g(\frac{y_1 + \ldots + y_n}{n}) = \frac{g(y_1) + \ldots + g(y_n)}{n} \rightarrow 0.$$
     Torej je $g$ zvezna v $0$. Ker je $g(x_0 + x) = g(x_0) + g(x)$, je zvezna tudi v vsaki drugi točki $x_0 \in \mathbb{R}$.
 
-    Naj bo $A = g(1)$. Zevezni funkciji $g$ in $x \mapsto Ax$ se ujemata na $\mathbb{Q}$, ki je gosta podmnožica v $\mathbb{R}$, torej sta enaki. Če vzamemo $B = f(0)$, velja $f(x) = Ax + B$ za vse $x \in \mathbb{R}$. S tem je implikacija dokazana.
+    Naj bo $A = g(1)$. Zvezni funkciji $g$ in $x \mapsto Ax$ se ujemata na $\mathbb{Q}$, ki je gosta podmnožica v $\mathbb{R}$, torej sta enaki. Če vzamemo $B = f(0)$, velja $f(x) = Ax + B$ za vse $x \in \mathbb{R}$. S tem je implikacija dokazana.
 
     $(3) \Rightarrow (2): $ To smo pokazali v zgornjem zgledu.
 
@@ -177,7 +177,7 @@ Vemo že, da je $f: \mathbb{R} \rightarrow \mathbb{R}$ zvezna v točki $a \in \m
 
     $(2) \Rightarrow (1): $ Če je $f$ Cesaro odvedljiva, je po definiciji Cesaro odvedljiva tudi v točki $0$.
 \end{dokaz}
-Končno smo klasificirali Cesaro zvezne in Cesaro odvedljive funkcije. Opazimo, da obstajajo funkcije, ki so Cesaro odvedljive, ampak niso Cesaro zvezne. Takšna funkcije je naprimer $x \mapsto x^2$. To je presenetljivo, saj vemo, da za funkcije iz odvedljivosti sledi zveznost. Pri Cesaro zveznih in Cesaro odvedljivih funkcijah pa temu ni tako.
+Končno smo klasificirali Cesaro zvezne in Cesaro odvedljive funkcije. Opazimo, da obstajajo funkcije, ki so Cesaro odvedljive, ampak niso Cesaro zvezne. Takšna funkcije je na primer $x \mapsto x^2$. To je presenetljivo, saj vemo, da za funkcije iz odvedljivosti sledi zveznost. Pri Cesaro zveznih in Cesaro odvedljivih funkcijah pa temu ni tako.
 
 
 

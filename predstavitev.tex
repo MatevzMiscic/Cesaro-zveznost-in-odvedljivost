@@ -53,14 +53,19 @@ V prvem letniku smo se pri analizi naučili, da iz $a_n \rightarrow a$ sledi $a_
 
 \subsection*{Primeri}
 \begin{enumerate}
-    \item Poiščimo primer omejenega zaporedja, ki ni Ces\`{a}ro konvergentno. Prvi člen naj bo enak $2$. Naslednjih nekaj členov bo enakih $-2$. Takih členov mora biti dovolj, da bo aritmetična sredina padla pod $-1$. Nato spet dodajmo dovolj členov enakih $2$, da bo aritmetična sredina narasla nad $1$. S ponavljanjem take konstrukcije dobimo omejeno zaporedje, ki ni Ces\`{a}ro konvergentno, saj zaporedje aritmetičnih sredin nekako oscilira med $-1$ in $1$.
-    \item Naj bo $m \in \mathbb{N}$ in $a_1, a_2, \ldots, a_m \in \mathbb{R}$. Zanima nas, kdaj zaporedje $a_1, a_2, \ldots, a_m, a_1, a_2, \ldots$ Ces\`{a}ro konvergira proti $0$. Naj bo $A := a_1 + a_2 + \ldots + a_m$. Ker za vse $k \in \mathbb{N}$ velja $\overline{a}_{km} = A$, je enakost $A = 0$ potreben pogoj za $a_n \leadsto 0$. Naj bo torej $A = 0$. Zaporedje delnih vsot zaporedja $(a_n)$ je potem periodično, zato je omejeno. Sledi, da zaporedje aritmetičnih sredin konvergira proti $0$. Torej $(a_n)$ konvergira proti $0$ natanko tedaj, ko velja $A = 0$.
+    \item Poiščimo primer omejenega zaporedja, ki ni Ces\`{a}ro konvergentno. Prvi člen naj bo enak $2$. Naslednjih nekaj členov bo enakih $-2$. Takih členov mora biti dovolj, da bo aritmetična sredina padla pod $-1$. Nato spet dodajmo dovolj členov enakih $2$, da bo aritmetična sredina narasla nad $1$. S ponavljanjem take konstrukcije dobimo omejeno zaporedje, ki ni Ces\`{a}ro konvergentno, saj zaporedje aritmetičnih sredin oscilira med $-1$ in $1$.
+    \item Naj bo $m \in \mathbb{N}$ in $a_1, a_2, \ldots, a_m \in \mathbb{R}$. Zanima nas, kdaj zaporedje $a_1, a_2, \ldots, a_m, a_1, a_2, \ldots$ Ces\`{a}ro konvergira proti $0$. Naj bo $A := a_1 + a_2 + \ldots + a_m$. Ker za vse $k \in \mathbb{N}$ velja $\overline{a}_{km} = \frac{A}{m}$, je enakost $A = 0$ potreben pogoj za $a_n \leadsto 0$. Naj bo torej $A = 0$. Zaporedje delnih vsot zaporedja $(a_n)$ je potem periodično, zato je omejeno. Sledi, da zaporedje aritmetičnih sredin konvergira proti $0$. Torej $(a_n)$ Ces\`{a}ro konvergira proti $0$ natanko tedaj, ko velja $A = 0$.
 \end{enumerate}
 
+Naj bo $V$ vektorski prostor vseh realnih zaporedij. Preslikava $\phi: V \rightarrow V$, ki zaporedju $(a_n)$ priredi njegovo zaporedje aritmetičnih sredin $(\overline{a}_n)$, je endomorfizem vektorskega prostora $V$. V nadaljevanju bomo videli, da je $\phi$ surjektivna preslikava, je pa tudi injektivna, torej je celo avtomorfizem vektorskega prostora $V$, ampak to za nas ne bo tako pomembno. Potrebovali bomo le linearnost $\phi$. 
 
+Naj bosta $(a_n)$ in $(b_n)$ Ces\`{a}ro konvergentni zaporedji. Zanima nas, če lahko kaj povemo o Ces\`{a}ro konvergenci vsote teh dveh zaporedij $(a_n + b_n)$. Ker je $\phi$ aditivna, je zaporedje aritmetičnih sredin vsote enako vsoti zaporedij aritmetičnih sredin. Povedano drugače, za vsak $n \in \N$ velja $\overline{a_n + b}_n = \overline{a}_n + \overline{b}_n$. Zaporedji $(\overline{a}_n)$ in $(\overline{b})$ konvergirata, torej konvergira tudi zaporedje $(\overline{a_n + b_n})$ in velja
+$$\lim_{n \rightarrow \infty} \overline{a_n + b}_n = \lim_{n \rightarrow \infty} \overline{a}_n + \lim_{n \rightarrow \infty} \overline{b}_n.$$
+S tem smo pokazali, da je vsota Ces\`{a}ro konvergentnih zaporedij Ces\`{a}ro konvergentna in da je Ces\`{a}ro limita vsote enaka vsoti Ces\`{a}ro limit obeh zaporedij.
+S podobnim razmislekom lahko vidimo, da podobno velja za množenje zaporedja s skalarjem. Če je $(a_n)$ Ces\`{a}ro konvergentno zaporedje s Ces\`{a}ro limito $a$ in je $\lambda \in \R$, potem je tudi $(\lambda a_n)$ Ces\`{a}ro konvergentno s Ces\`{a}ro limito $\lambda a$.
 
 \section{Ces\`{a}ro zveznost}
-Sedaj se lahko končno lotimo Ces\`{a}ro zveznosti.
+Sedaj lahko končno začnemo obravnavati Ces\`{a}ro zveznost.
 
 \begin{definicija}
     Funkcija $f: \mathbb{R} \rightarrow \mathbb{R}$ je Ces\`{a}ro zvezna v točki $a \in \mathbb{R}$, če za vsako zaporedje $(a_n)$, ki Ces\`{a}ro konvergira proti $a$, zaporedje $(f(a_n))$ Ces\`{a}ro konvergira proti $f(a)$. Pravimo, da je $f$ zvezna, če je zvezna v vsaki točki $a \in \mathbb{R}$.
@@ -87,11 +92,11 @@ Kot smo ugotovili, je vsaka funkcija oblike $f(x) = Ax + B$ Ces\`{a}ro zvezna. I
 \begin{dokaz}
     $(1) \Rightarrow (3): $ Naj bo funkcija $g: \mathbb{R} \rightarrow \mathbb{R}$ definirana s predpisom $g(x) = f(x) - f(0)$. Potem je $g$ Ces\`{a}ro zvezna v točki $0$ in velja $g(0) = 0$. 
     Naj bo $a \in \mathbb{R}$ poljubno realno število. Ker zaporedje $a, -a, a, -a, a, \ldots$ Ces\`{a}ro konvergira proti $0$ in je $g$ Ces\`{a}ro zvezna v $0$, zaporedje $g(a), g(-a), g(a), g(-a), \ldots$ Ces\`{a}ro konvergira proti $g(0) = 0$. Potem mora veljati $g(a) + g(-a) = 0$ oziroma $g(-a) = -g(a)$. 
-    Naj bosta zdaj $b, c \in \mathbb{R}$ poljubni realni števili. Spet zaporedje $b, c, -(b+c), b, c, -(b+c), \ldots$ Ces\`{a}ro konvergira k $0$, zato zaporedje $g(b), g(c), g(-(b+c)), g(b), \ldots$ Ces\`{a}ro konvergira proti $g(0) = 0$. Sledi $g(b) + g(c) + g(-(b+c)) = 0$ oziroma $-(g(b) + g(c)) = g(-(b+c))$. Upoštevamo še, da je velja $g(-a) = -g(a)$ za vsak $a \in \mathbb{R}$ in dobimo $g(b) + g(c) = g(b+c)$. Torej je $g$ aditivna.
+    Naj bosta zdaj $b, c \in \mathbb{R}$ poljubni realni števili. Spet zaporedje $b, c, -(b+c), b, c, -(b+c), \ldots$ Ces\`{a}ro konvergira k $0$, zato tudi zaporedje $g(b), g(c), g(-(b+c)), g(b), \ldots$ Ces\`{a}ro konvergira proti $g(0) = 0$. Sledi $g(b) + g(c) + g(-(b+c)) = 0$ oziroma $-(g(b) + g(c)) = g(-(b+c))$. Upoštevamo še, da je velja $g(-a) = -g(a)$ za vsak $a \in \mathbb{R}$ in dobimo $g(b) + g(c) = g(b+c)$. Torej je $g$ aditivna.
 
-    Naslednji cilj je pokazati, da velja $g(\lambda x) = \lambda g(x)$ za vse $\lambda \in \mathbb{Q}$ in $x \in \mathbb{R}$. Za primer ko je $\lambda \in \mathbb{N}$ to sledi neposredno iz aditivnosti. Ker velja tudi $g(0) = 0$ in $g(-a) = -g(a)$, to velja celo za vse $\lambda \in \mathbb{Z}$. Naj bo zdaj $\frac{m}{n} \in \mathbb{Q}$ poljubno racionalno število. Velja $mg(x) = g(mx) = g(n\frac{m}{n}x) = ng(\frac{m}{n}x)$ oziroma $\frac{m}{n}g(x) = g(\frac{m}{n}x)$, kar smo želeli dokazati.
+    Naslednji cilj je pokazati, da velja $g(\lambda x) = \lambda g(x)$ za vse $\lambda \in \mathbb{Q}$ in $x \in \mathbb{R}$. Za primer, ko je $\lambda \in \mathbb{N}$, to sledi neposredno iz aditivnosti. Ker velja tudi $g(0) = 0$ in $g(-a) = -g(a)$, to velja celo za vse $\lambda \in \mathbb{Z}$. Naj bo zdaj $\frac{m}{n} \in \mathbb{Q}$ poljubno racionalno število. Velja $mg(x) = g(mx) = g(n\frac{m}{n}x) = ng(\frac{m}{n}x)$ oziroma $\frac{m}{n}g(x) = g(\frac{m}{n}x)$, kar smo želeli dokazati.
 
-    Pokažimo zdaj, da je $g$ zvezna. Naj bo $(x_n)$ poljubno zaporedje, da je $x_n \rightarrow 0$. Poiščimo zaporedje $(y_n)$, katerega zaporedje aritmetičnih sredin je enako $(x_n)$. Očitno mora biti $y_1 = x_1$. Denimo, da smo že definirali $y_1, \ldots, y_n$ in da velja $x_k = \overline{y}_k$ za vse $k \leq n$. Da bo veljalo tudi $x_{n+1} = \overline{y}_{n+1}$ oziroma $x_{n+1} = \frac{y_1 + \ldots + y_{n+1}}{n+1}$, moramo vzeti $y_{n+1} = (n+1)x_{n+1} - (y_1 + \ldots + y_n)$. Tako definirano zaporedje $(y_n)$ res zadošča $x_n = \overline{y}_n$ za vse $n \in \mathbb{N}$. Ker je $x_n \rightarrow 0$, je $y_n \leadsto 0$ po definiciji, zato iz Ces\`{a}ro zveznosti funkcije $g$ v $0$ sledi $g(y_n) \leadsto g(0) = 0$. Iz tega, kar smo pokazali v prejšnjih odstavkih, sledi 
+    Pokažimo zdaj, da je $g$ zvezna. Naj bo $(x_n)$ poljubno zaporedje, da je $x_n \rightarrow 0$. Poiščimo zaporedje $(y_n)$, katerega zaporedje aritmetičnih sredin je enako $(x_n)$. Očitno mora biti $y_1 = x_1$. Denimo, da smo že definirali $y_1, \ldots, y_n$ in da velja $x_k = \overline{y}_k$ za vse $k \leq n$. Da bo veljalo tudi $x_{n+1} = \overline{y}_{n+1}$ oziroma $x_{n+1} = \frac{y_1 + \ldots + y_{n+1}}{n+1}$, moramo vzeti $y_{n+1} = (n+1)x_{n+1} - (y_1 + \ldots + y_n)$. Tako definirano zaporedje $(y_n)$ res zadošča $x_n = \overline{y}_n$ za vse $n \in \mathbb{N}$. Ker je $x_n \rightarrow 0$, je $y_n \leadsto 0$ po definiciji, zato iz Ces\`{a}ro zveznosti funkcije $g$ v $0$ sledi $g(y_n) \leadsto g(0) = 0$. Iz tega, kar smo pokazali v prejšnjih odstavkih, potem sledi 
     $$g(x_n) = g(\overline{y}_n) = g(\frac{y_1 + \ldots + y_n}{n}) = \frac{g(y_1) + \ldots + g(y_n)}{n} \rightarrow 0.$$
     Torej je $g$ zvezna v $0$. Ker je $g(x_0 + x) = g(x_0) + g(x)$, je zvezna tudi v vsaki drugi točki $x_0 \in \mathbb{R}$.
 
@@ -127,11 +132,11 @@ Vemo že, da je $f: \mathbb{R} \rightarrow \mathbb{R}$ zvezna v točki $a \in \m
     Naj bo $f: \mathbb{R} \rightarrow \mathbb{R}$ funkcija. Naj za vsako zaporedje $(a_n)$ s členi različnimi od $0$, ki Ces\`{a}ro konvergira proti $0$, velja $f(a_n) \leadsto f(0)$. Potem je $f$ Ces\`{a}ro zvezna v točki $0$.
 \end{lema}
 \begin{dokaz}
-    Predpostaviti smemo, da velja $f(0) = 0$. Podobno kot pri dokazu izreka lahko dokažemo, da velja $f(a+b) = f(a) + f(b)$ za neničelna $a, b \in \mathbb{R}$. Če je katero od obeh števil enako $0$, pa to velja trivialno. Torej je $f$ aditivna. 
+    Predpostaviti smemo, da velja $f(0) = 0$. Podobno kot pri dokazu izreka lahko dokažemo, da velja $f(a+b) = f(a) + f(b)$ za neničelna $a, b \in \mathbb{R}$. Če je katero od obeh števil enako $0$, pa to očitno velja. Torej je $f$ aditivna. 
     
     Naj bo $(a_n)$ poljubno zaporedje, za katero velja $a_n \leadsto 0$. Pokazati želimo, da velja $f(a_n) \leadsto f(0) = 0$. To bomo storili tako, da bomo skonstruirali zaporedje $(b_n)$ s členi različnimi od $0$, ki se bo malo razlikovalo od zaporedja $(a_n)$, tako da bo veljalo $a_n - b_n \leadsto 0$ in $f(a_n) - f(b_n) \leadsto 0$.
 
-    Ker je množica $\R$ neštevna, množica $\{a_n \mid n \in \N\} \cup \{-a_n \mid n \in \N\}$ pa števna, lahko izberemo $\delta \in \R$, da za vsak $n \in \N$ velja $\delta \neq a_n$ in $\delta \neq -a_n$. Definirajmo $b_n = a_n + (-1)^n \delta$. Za vse $n \in \N$ je $b_n \neq 0$, torej je $(b_n)$ zaporedje z neničelnimi členi. Če je $n$ sod, velja $b_1 + \ldots + b_n = a_1 + \ldots a_n$, če je $n$ lih, pa je $b_1 + \ldots + b_n = a_1 + \ldots a_n - \delta$. Od tod sledi
+    Ker je množica $\R$ neštevna, množica $\{a_n \mid n \in \N\} \cup \{-a_n \mid n \in \N\}$ pa števna, lahko izberemo $\delta \in \R$, da za vsak $n \in \N$ velja $\delta \neq a_n$ in $\delta \neq -a_n$. Definirajmo $b_n = a_n + (-1)^n \delta$. Za vse $n \in \N$ je $b_n \neq 0$, torej je $(b_n)$ zaporedje z neničelnimi členi. Če je $n$ sod, velja $b_1 + \ldots + b_n = a_1 + \ldots + a_n$, če je $n$ lih, pa je $b_1 + \ldots + b_n = a_1 + \ldots + a_n - \delta$. Od tod sledi
     $$
     \overline{a}_n - \overline{b}_n = \begin{cases}
         0; & n \ \text{sod}\\
@@ -161,7 +166,7 @@ Vemo že, da je $f: \mathbb{R} \rightarrow \mathbb{R}$ zvezna v točki $a \in \m
     \end{enumerate}
 \end{izrek}
 \begin{dokaz}
-    $(1) \Rightarrow (3): $ Definiramo funkcijo $: \mathbb{R} \rightarrow \mathbb{R}$ s predpisom 
+    $(1) \Rightarrow (3): $ Definiramo funkcijo $f: \mathbb{R} \rightarrow \mathbb{R}$ s predpisom 
     $$
     g(x) = \begin{cases}
         \frac{f(x)-f(0)}{x}; & x \neq 0\\
@@ -177,7 +182,7 @@ Vemo že, da je $f: \mathbb{R} \rightarrow \mathbb{R}$ zvezna v točki $a \in \m
 
     $(2) \Rightarrow (1): $ Če je $f$ Ces\`{a}ro odvedljiva, je po definiciji Ces\`{a}ro odvedljiva tudi v točki $0$.
 \end{dokaz}
-Končno smo klasificirali Ces\`{a}ro zvezne in Ces\`{a}ro odvedljive funkcije. Opazimo, da obstajajo funkcije, ki so Ces\`{a}ro odvedljive, ampak niso Ces\`{a}ro zvezne. Takšna funkcije je na primer $x \mapsto x^2$. To je presenetljivo, saj vemo, da za funkcije iz odvedljivosti sledi zveznost. Pri Ces\`{a}ro zveznih in Ces\`{a}ro odvedljivih funkcijah pa temu ni tako.
+Končno smo klasificirali Ces\`{a}ro zvezne in Ces\`{a}ro odvedljive funkcije. Opazimo, da obstajajo funkcije, ki so Ces\`{a}ro odvedljive, ampak niso Ces\`{a}ro zvezne. Takšna funkcije je na primer $x \mapsto x^2$. To je presenetljivo, saj vemo, da je funkcija zvezna v neki točki, če je odvedljiva v tej točki. Za Ces\`{a}ro zveznost in Ces\`{a}ro odvedljivost pa se izkaže, da to ne velja.
 
 
 

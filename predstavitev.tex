@@ -15,13 +15,12 @@
 
 \theoremstyle{definition}
 \newtheorem{definicija}{Definicija}
-%\newtheorem{zgled}{Zgled}
+\newtheorem{zgled}{Zgled}
 \theoremstyle{plain}
 \newtheorem{izrek}{Izrek}
 \newtheorem{lema}{Lema}
 
 \newenvironment{dokaz}{\begin{proof}[\bfseries\upshape\proofname]}{\end{proof}}
-\newenvironment{zgled}{\begin{proof}[\bfseries\upshape Zgled]}{\end{proof}}
 
 \newcommand{\geslo}[2]{\noindent \textbf{#1} \quad #2 \hfill \break}
 
@@ -63,6 +62,11 @@ Naj bosta $(a_n)$ in $(b_n)$ Ces\`{a}ro konvergentni zaporedji. Zanima nas, če 
 $$\lim_{n \rightarrow \infty} \overline{a_n + b}_n = \lim_{n \rightarrow \infty} \overline{a}_n + \lim_{n \rightarrow \infty} \overline{b}_n.$$
 S tem smo pokazali, da je vsota Ces\`{a}ro konvergentnih zaporedij Ces\`{a}ro konvergentna in da je Ces\`{a}ro limita vsote enaka vsoti Ces\`{a}ro limit obeh zaporedij.
 S podobnim razmislekom lahko vidimo, da podobno velja za množenje zaporedja s skalarjem. Če je $(a_n)$ Ces\`{a}ro konvergentno zaporedje s Ces\`{a}ro limito $a$ in je $\lambda \in \R$, potem je tudi $(\lambda a_n)$ Ces\`{a}ro konvergentno s Ces\`{a}ro limito $\lambda a$.
+
+Produkt dveh Cesaro konvergentnih zaporedij pa ni nujno Cesaro konvergentno zaporedje, kar nam pokaže naslednji zgled.
+\begin{zgled}
+    Naj bo $a_n = (-1)^n \sqrt{n}$ za vse $n \in \N$. 
+\end{zgled}
 
 \section{Ces\`{a}ro zveznost}
 Sedaj lahko končno začnemo obravnavati Ces\`{a}ro zveznost.
@@ -117,14 +121,16 @@ Oglejmo si nekaj primerov funkcij in poskusimo ugotoviti, če so Ces\`{a}ro odve
 
 \subsection*{Primeri}
 \begin{enumerate}
-    \item Naj bo $f: \mathbb{R} \rightarrow \mathbb{R}$ funkcija oblike $f(x) = Ax^2 + Bx + C$ za neke $A, B, C \in \mathbb{R}$. Naj bo $(a_n)$ poljubno Ces\`{a}ro konvergentno zaporedje s Ces\`{a}ro limito $a$. Velja 
+    \item Naj bo $f: \mathbb{R} \rightarrow \mathbb{R}$ funkcija oblike $f(x) = Ax^2 + Bx + C$ za neke $A, B, C \in \mathbb{R}$. Naj bo $(a_n)$ poljubno Ces\`{a}ro konvergentno zaporedje s Ces\`{a}ro limito $a$, ki ima vse člene različne od $a$. Velja 
     \begin{align*}
         \frac{f(a_n)-f(a)}{a_n-a} &= \frac{(Aa_n^2 + Ba_n + C)-(Aa^2 + Ba + C)}{a_n-a}\\
         &= \frac{A(a_n-a)(a_n+a) + B(a_n-a)}{a_n-a}\\
         &= A(a_n+a) + B \leadsto 2Aa + B,
     \end{align*}
     torej je $f$ Ces\`{a}ro odvedljiva in je $2Ax + B$ njen Ces\`{a}ro odvod. Opazimo lahko, da je Ces\`{a}ro odvod enak odvodu.
-    \item Naj bo zdaj $f: \mathbb{R} \rightarrow \mathbb{R}$ funkcija s predpisom $f(x) = x^3$. Velja $(-1)^n \leadsto 0$, ampak $$\frac{(-1)^3-0^3}{(-1)-0} = 1 \leadsto 1 \neq 0 = f(0).$$ Torej $f$ ni Ces\`{a}ro odvedljiva v točki 0.
+    \item Naj bo zdaj $f: \mathbb{R} \rightarrow \mathbb{R}$ funkcija s predpisom $f(x) = x^3$. Velja $(-1)^n \leadsto 0$, ampak 
+    $$\frac{(-1)^3-0^3}{(-1)-0} = 1 \leadsto 1 \neq 0 = f(0).$$ 
+    Torej $f$ ni Ces\`{a}ro odvedljiva v točki 0.
 \end{enumerate}
 
 Vemo že, da je $f: \mathbb{R} \rightarrow \mathbb{R}$ zvezna v točki $a \in \mathbb{R}$ natanko tedaj, ko obstaja limita $f$ v točki $a$ in je ta limita enaka $f(a)$. Podobno velja tudi za Ces\`{a}ro zveznost, kar nam pove naslednja lema.

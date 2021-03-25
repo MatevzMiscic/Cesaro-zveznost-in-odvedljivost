@@ -87,6 +87,7 @@ Sedaj lahko končno začnemo obravnavati Ces\`{a}ro zveznost.
 Da si bomo lažje predstavljali, katere funkcije so Ces\`{a}ro zvezne, si najprej oglejmo kakšen primer.
 
 \begin{zgled}
+    \label{vsezvez}
     Pokazati želimo, da je vsaka funkcija oblike $f(x) = Ax + B$, kjer sta $A, B \in \mathbb{R}$, Ces\`{a}ro zvezna. Naj bo $(a_n)$ poljubno Ces\`{a}ro konvergentno zaporedje in $a$ njegova Ces\`{a}ro limita. Zaporedje $(A a_n + B)$ Ces\`{a}ro konvergira k $A a + B = f(a)$, torej je funkcija $f$ res Ces\`{a}ro zvezna.
 \end{zgled}
 
@@ -118,7 +119,7 @@ Kot smo ugotovili, je vsaka funkcija oblike $f(x) = Ax + B$ Ces\`{a}ro zvezna. I
 
     Naj bo $A = g(1)$. Zvezni funkciji $g$ in $x \mapsto Ax$ se ujemata na $\mathbb{Q}$, ki je gosta podmnožica v $\mathbb{R}$, torej sta enaki. Če vzamemo $B = f(0)$, velja $f(x) = Ax + B$ za vse $x \in \mathbb{R}$. S tem je implikacija dokazana.
 
-    $(3) \Rightarrow (2): $ To smo pokazali v zgornjem zgledu.
+    $(3) \Rightarrow (2): $ To smo pokazali v zgledu \ref{vsezvez}.
 
     $(2) \Rightarrow (1): $ Če je $f$ Ces\`{a}ro zvezna, je po definiciji Ces\`{a}ro zvezna tudi v točki $0$.
 \end{dokaz}
@@ -206,10 +207,11 @@ V zgledu \ref{vseodv} smo pokazali, da so vse funkcije oblike $f(x) = Ax^2 + Bx 
     po definiciji Ces\`{a}ro odvoda $f$ v točki $0$. Po lemi \ref{lema} je $g$ Ces\`{a}ro zvezna v točki $0$, zato je po izreku \ref{klaszvez} oblike $g(x) = Ax + B$ za neka $A, B \in \mathbb{R}$. Potem pa je 
     $f(x) = xg(x) + f(0) = Ax^2 + Bx + C$ za $C = f(0)$.
 
-    $(3) \Rightarrow (2): $ To smo pokazali v zgornjem zgledu.
+    $(3) \Rightarrow (2): $ To smo pokazali v zgledu \ref{vseodv}.
 
     $(2) \Rightarrow (1): $ Če je $f$ Ces\`{a}ro odvedljiva, je po definiciji Ces\`{a}ro odvedljiva tudi v točki $0$.
 \end{dokaz}
+
 Končno smo klasificirali Ces\`{a}ro zvezne in Ces\`{a}ro odvedljive funkcije. Opazimo, da obstajajo funkcije, ki so Ces\`{a}ro odvedljive, ampak niso Ces\`{a}ro zvezne. Takšna funkcija je na primer $x \mapsto x^2$. To je presenetljivo, saj vemo, da je funkcija zvezna v neki točki, če je odvedljiva v tej točki. Za Ces\`{a}ro zveznost in Ces\`{a}ro odvedljivost pa se izkaže, da to ne velja.
 
 

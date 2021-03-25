@@ -2,7 +2,7 @@
 \usepackage[slovene]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage[a4paper, total={17cm, 23cm}]{geometry}
+\usepackage[a4paper, total={16cm, 22cm}]{geometry}
 \usepackage{lmodern}
 \usepackage{amsmath,amsfonts}
 \usepackage{amsthm}
@@ -37,36 +37,45 @@
 \maketitle{}
 
 \section*{Uvod}
-V prvem letniku smo spoznali, kako lahko zveznost funkcije v neki točki karakteriziramo z zaporedji. Funkcija $f: \mathbb{R} \rightarrow \mathbb{R}$ je zvezna v točki $a \in \mathbb{R}$ natanko tedaj, ko za vsako zaporedje $(a_n)$, ki konvergira proti $a$, zaporedje $(f(a_n))$ konvergira proti $f(a)$. Podobno lahko z zaporedji karakteriziramo funkcijsko limito: število $L \in \mathbb{R}$ je limita funkcije $f: \mathbb{R} \rightarrow \mathbb{R}$ v točki $a \in \mathbb{R}$ natanko tedaj, ko za vsako zaporedje $(a_n)$ s členi različnimi od $a$, ki konvergira proti $a$, zaporedje $(f(a_n))$ konvergira proti $L$. Po definiciji funkcija $f: \mathbb{R} \rightarrow \mathbb{R}$ odvedljiva v $a$, če obstaja limita $$\lim_{x \rightarrow a} \frac{f(x)-f(a)}{x-a},$$ v tem primeru tej limiti pravimo odvod funkcije $f$ v točki $a$. Ker funkcijsko limito znamo opisati z zaporedji, lahko rečemo, da je $f$ odvedljiva v $a$, natanko tedaj, ko obstaja število $L \in \mathbb{R}$, da za vsako zaporedje $(a_n)$ s členi različnimi od $a$, ki konvergira proti $a$, zaporedje $(\frac{f(x)-f(a_n)}{x-a_n})$ konvergira proti $L$. Sedaj smo uspeli pojma zveznosti in odvedljivosti funkcije opisati samo s pojmom konvergence zaporedja. Če bi znali tudi kako drugače definirati, kdaj dano zaporedje konvergira, bi dobili drugačni definiciji zveznosti in odvedljivosti. Točno s tem se bomo ukvarjali v tej predstavitvi. Najprej se bomo naučili, kaj je to Ces\`{a}ro konvergenca zaporedja, s pomočjo tega bomo dobili novi definiciji zveznosti in odvedljivosti, nato pa bomo ugotovili katere funkcije so zvezne oziroma odvedljive po tej novi definiciji.
+V prvem letniku smo spoznali, kako lahko zveznost funkcije v neki točki karakteriziramo z zaporedji. Funkcija $f: \mathbb{R} \rightarrow \mathbb{R}$ je zvezna v točki $a \in \mathbb{R}$ natanko tedaj, ko za vsako zaporedje $(a_n)$, ki konvergira proti $a$, zaporedje $(f(a_n))$ konvergira proti $f(a)$. Podobno lahko z zaporedji karakteriziramo funkcijsko limito: število $L \in \mathbb{R}$ je limita funkcije $f: \mathbb{R} \rightarrow \mathbb{R}$ v točki $a \in \mathbb{R}$ natanko tedaj, ko za vsako zaporedje $(a_n)$ s členi različnimi od $a$, ki konvergira proti $a$, zaporedje $(f(a_n))$ konvergira proti $L$. Po definiciji je funkcija $f: \mathbb{R} \rightarrow \mathbb{R}$ odvedljiva v $a$, če obstaja limita $$\lim_{x \rightarrow a} \frac{f(x)-f(a)}{x-a},$$ v tem primeru tej limiti pravimo odvod funkcije $f$ v točki $a$. Ker funkcijsko limito znamo opisati z zaporedji, lahko rečemo, da je $f$ odvedljiva v $a$ natanko tedaj, ko obstaja število $L \in \mathbb{R}$, da za vsako zaporedje $(a_n)$ s členi različnimi od $a$, ki konvergira proti $a$, zaporedje $(\frac{f(a_n)-f(a)}{a_n-a})$ konvergira proti $L$. Sedaj smo uspeli pojma zveznosti in odvedljivosti funkcije opisati samo s pojmom konvergence zaporedja. Če bi znali tudi kako drugače definirati, kdaj dano zaporedje konvergira in kakšna je limita, bi dobili drugačni definiciji zveznosti in odvedljivosti. Točno s tem se bomo ukvarjali v tej predstavitvi. Najprej se bomo naučili, kaj je to Ces\`{a}ro konvergenca zaporedja, s pomočjo tega bomo dobili novi definiciji zveznosti in odvedljivosti, nato pa bomo ugotovili katere funkcije so zvezne oziroma odvedljive po tej novi definiciji.
 
 
 
 \section{Ces\`{a}ro konvergenca}
 Naj bo $(a_n)$ realno zaporedje. Temu zaporedju lahko priredimo novo zaporedje, katerega n-ti člen je enak $\overline{a}_n = \frac{a_1+a_2+\ldots+a_n}{n}$. Temu novemu zaporedju bomo rekli zaporedje aritmetičnih sredin zaporedja $(a_n)$ in ga označili z $(\overline{a}_n)$.
 \begin{definicija}
-    Realno zaporedje $(a_n)$ Ces\`{a}ro konvergira, če konvergira njeno zaporedje aritmetičnih sredin $(\overline{a}_n)$.
+    Realno zaporedje $(a_n)$ Ces\`{a}ro konvergira, če konvergira njegovo zaporedje aritmetičnih sredin $(\overline{a}_n)$. V takem primeru limiti zaporedja $(\overline{a}_n)$ pravimo Ces\`{a}ro limita zaporedja $(a_n)$.
 \end{definicija}
 Oznaka $a_n \rightarrow a$ naj pomeni, da zaporedje $(a_n)$ konvergira proti $a$, oznaka $a_n \leadsto a$ pa, da zaporedje Ces\`{a}ro konvergira proti $a$. 
 
 V prvem letniku smo se pri analizi naučili, da iz $a_n \rightarrow a$ sledi $a_n \leadsto a$. Obratno seveda ne velja, saj zaporedje $((-1)^n)$ Ces\`{a}ro konvergira proti $0$, ne konvergira pa v običajnem smislu. Ker je pojem Ces\`{a}ro konvergence zelo pomemben za nadaljevanje, si oglejmo še nekaj primerov.
 
-\subsection*{Primeri}
-\begin{enumerate}
-    \item Poiščimo primer omejenega zaporedja, ki ni Ces\`{a}ro konvergentno. Prvi člen naj bo enak $2$. Naslednjih nekaj členov bo enakih $-2$. Takih členov mora biti dovolj, da bo aritmetična sredina padla pod $-1$. Nato spet dodajmo dovolj členov enakih $2$, da bo aritmetična sredina narasla nad $1$. S ponavljanjem take konstrukcije dobimo omejeno zaporedje, ki ni Ces\`{a}ro konvergentno, saj zaporedje aritmetičnih sredin oscilira med $-1$ in $1$.
-    \item Naj bo $m \in \mathbb{N}$ in $a_1, a_2, \ldots, a_m \in \mathbb{R}$. Zanima nas, kdaj zaporedje $a_1, a_2, \ldots, a_m, a_1, a_2, \ldots$ Ces\`{a}ro konvergira proti $0$. Naj bo $A := a_1 + a_2 + \ldots + a_m$. Ker za vse $k \in \mathbb{N}$ velja $\overline{a}_{km} = \frac{A}{m}$, je enakost $A = 0$ potreben pogoj za $a_n \leadsto 0$. Naj bo torej $A = 0$. Zaporedje delnih vsot zaporedja $(a_n)$ je potem periodično, zato je omejeno. Sledi, da zaporedje aritmetičnih sredin konvergira proti $0$. Torej $(a_n)$ Ces\`{a}ro konvergira proti $0$ natanko tedaj, ko velja $A = 0$.
-\end{enumerate}
+\begin{zgled}
+    Poiščimo primer omejenega zaporedja, ki ni Ces\`{a}ro konvergentno. Prvi člen naj bo enak $2$. Naslednjih nekaj členov bo enakih $-2$. Takih členov mora biti dovolj, da bo aritmetična sredina padla pod $-1$. Nato spet dodajmo dovolj členov enakih $2$, da bo aritmetična sredina narasla nad $1$. S ponavljanjem take konstrukcije dobimo omejeno zaporedje, ki ni Ces\`{a}ro konvergentno, saj zaporedje aritmetičnih sredin oscilira med $-1$ in $1$.
+\end{zgled}
 
-Naj bo $V$ vektorski prostor vseh realnih zaporedij. Preslikava $\phi: V \rightarrow V$, ki zaporedju $(a_n)$ priredi njegovo zaporedje aritmetičnih sredin $(\overline{a}_n)$, je endomorfizem vektorskega prostora $V$. V nadaljevanju bomo videli, da je $\phi$ surjektivna preslikava, je pa tudi injektivna, torej je celo avtomorfizem vektorskega prostora $V$, ampak to za nas ne bo tako pomembno. Potrebovali bomo le linearnost $\phi$. 
+\begin{zgled}
+    Naj bo $m \in \mathbb{N}$ in $a_1, a_2, \ldots, a_m \in \mathbb{R}$. Zanima nas, kdaj zaporedje 
+    $$a_1, a_2, \ldots, a_m, a_1, a_2, \ldots$$ 
+    Ces\`{a}ro konvergira proti $0$. Naj bo $A := a_1 + a_2 + \ldots + a_m$. Ker za vse $k \in \mathbb{N}$ velja $\overline{a}_{km} = \frac{A}{m}$, je enakost $A = 0$ potreben pogoj za $a_n \leadsto 0$. Naj bo torej $A = 0$. Zaporedje delnih vsot zaporedja $(a_n)$ je potem periodično, zato je omejeno. Sledi, da zaporedje aritmetičnih sredin konvergira proti $0$. Torej $(a_n)$ Ces\`{a}ro konvergira proti $0$ natanko tedaj, ko velja $A = 0$.
+\end{zgled}
 
-Naj bosta $(a_n)$ in $(b_n)$ Ces\`{a}ro konvergentni zaporedji. Zanima nas, če lahko kaj povemo o Ces\`{a}ro konvergenci vsote teh dveh zaporedij $(a_n + b_n)$. Ker je $\phi$ aditivna, je zaporedje aritmetičnih sredin vsote enako vsoti zaporedij aritmetičnih sredin. Povedano drugače, za vsak $n \in \N$ velja $\overline{a_n + b}_n = \overline{a}_n + \overline{b}_n$. Zaporedji $(\overline{a}_n)$ in $(\overline{b})$ konvergirata, torej konvergira tudi zaporedje $(\overline{a_n + b_n})$ in velja
+Naj bo $V$ vektorski prostor vseh realnih zaporedij. Lahko je preveriti, da je preslikava $\phi: V \rightarrow V$, ki zaporedju $(a_n)$ priredi njegovo zaporedje aritmetičnih sredin $(\overline{a}_n)$, endomorfizem vektorskega prostora $V$. V nadaljevanju bomo videli, da je $\phi$ surjektivna preslikava, je pa tudi injektivna, torej je celo avtomorfizem vektorskega prostora $V$, ampak to za nas ne bo tako pomembno. Pomembna bo le linearnost $\phi$. 
+
+Naj bosta $(a_n)$ in $(b_n)$ Ces\`{a}ro konvergentni zaporedji. Zanima nas, če lahko kaj povemo o Ces\`{a}ro konvergenci vsote teh dveh zaporedij $(a_n + b_n)$. Ker je $\phi$ aditivna, je zaporedje aritmetičnih sredin vsote enako vsoti zaporedij aritmetičnih sredin. Povedano drugače, za vsak $n \in \N$ velja $\overline{a_n + b}_n = \overline{a}_n + \overline{b}_n$. Zaporedji $(\overline{a}_n)$ in $(\overline{b}_n)$ konvergirata, zato konvergira tudi njuna vsota $(\overline{a_n + b_n})$ in velja
 $$\lim_{n \rightarrow \infty} \overline{a_n + b}_n = \lim_{n \rightarrow \infty} \overline{a}_n + \lim_{n \rightarrow \infty} \overline{b}_n.$$
 S tem smo pokazali, da je vsota Ces\`{a}ro konvergentnih zaporedij Ces\`{a}ro konvergentna in da je Ces\`{a}ro limita vsote enaka vsoti Ces\`{a}ro limit obeh zaporedij.
 S podobnim razmislekom lahko vidimo, da podobno velja za množenje zaporedja s skalarjem. Če je $(a_n)$ Ces\`{a}ro konvergentno zaporedje s Ces\`{a}ro limito $a$ in je $\lambda \in \R$, potem je tudi $(\lambda a_n)$ Ces\`{a}ro konvergentno s Ces\`{a}ro limito $\lambda a$.
 
-Produkt dveh Cesaro konvergentnih zaporedij pa ni nujno Cesaro konvergentno zaporedje, kar nam pokaže naslednji zgled.
+Produkt dveh Ces\`{a}ro konvergentnih zaporedij pa ni nujno Ces\`{a}ro konvergentno zaporedje, kar nam pokaže naslednji zgled.
 \begin{zgled}
-    Naj bo $a_n = (-1)^n \sqrt{n}$ za vse $n \in \N$. 
+    Naj bo $a_n = (-1)^n \sqrt{n}$ za vse $n \in \N$ in $A_n = \sum_{k=1}^{n}a_k$. Ker je zaporedje $(\sqrt{n})$ naraščajoče, lahko hitro vidimo, da je zaporedje $(A_n)$ alternirajoče: lihi členi so negativni, sodi pa pozitivni. Torej za lihe člene velja $-\sqrt{n} = a_n \leq A_{n-1} + a_n = A_n \leq 0$, za sode pa $0 \leq A_n = A_{n-1} + a_n \leq a_n = \sqrt{n}$. Sledi 
+    $$\lvert \overline{a}_n \rvert = \lvert \frac{A_n}{n} \rvert \leq \frac{\sqrt{n}}{n} \rightarrow 0,$$
+    zato velja $a_n \rightarrow 0$ oziroma $a_n \leadsto 0$. Če pa zaporedje $(a_n)$ pomnožimo s samim seboj, dobimo zaporedje, ki ni Ces\`{a}ro konvergentno.
 \end{zgled}
+
+
+
 
 \section{Ces\`{a}ro zveznost}
 Sedaj lahko končno začnemo obravnavati Ces\`{a}ro zveznost.
@@ -77,15 +86,18 @@ Sedaj lahko končno začnemo obravnavati Ces\`{a}ro zveznost.
 
 Da si bomo lažje predstavljali, katere funkcije so Ces\`{a}ro zvezne, si najprej oglejmo kakšen primer.
 
-\subsection*{Primeri}
-\begin{enumerate}
-    \item Pokazati želimo, da je vsaka funkcija oblike $f(x) = Ax + B$, kjer sta $A, B \in \mathbb{R}$, Ces\`{a}ro zvezna. Naj bo $(a_n)$ poljubno konvergentno zaporedje in $a$ njegova limita. Zaporedje $(A a_n + B)$ Ces\`{a}ro konvergira k $A a + B = f(a)$, torej je funkcija $f$ res Ces\`{a}ro zvezna.
-    \item Oglejmo si še primer funkcije, ki ni Ces\`{a}ro zvezna. Naj bo $f(x) = x^2$ funkcija. Zaporedje $((-1)^n)$ Ces\`{a}ro konvergira k $0$, zaporedje $(f((-1)^n))$ pa je konstantno enako $1$, zato Ces\`{a}ro konvergira k $1$ in ne k $f(0) = 0$. Torej $f$ ni Ces\`{a}ro zvezna v točki $0$.
-\end{enumerate}
+\begin{zgled}
+    Pokazati želimo, da je vsaka funkcija oblike $f(x) = Ax + B$, kjer sta $A, B \in \mathbb{R}$, Ces\`{a}ro zvezna. Naj bo $(a_n)$ poljubno Ces\`{a}ro konvergentno zaporedje in $a$ njegova Ces\`{a}ro limita. Zaporedje $(A a_n + B)$ Ces\`{a}ro konvergira k $A a + B = f(a)$, torej je funkcija $f$ res Ces\`{a}ro zvezna.
+\end{zgled}
 
-Kot smo ugotovili, je vsaka funkcija oblike $f(x) = Ax + B$ Ces\`{a}ro zvezna. Izkaže se, da so to tudi vse Ces\`{a}ro zvezne funkcije.
+\begin{zgled}
+    Oglejmo si še primer funkcije, ki ni Ces\`{a}ro zvezna. Naj bo $f(x) = x^2$ funkcija. Zaporedje $((-1)^n)$ Ces\`{a}ro konvergira k $0$, zaporedje $(f((-1)^n))$ pa je konstantno enako $1$, zato Ces\`{a}ro konvergira k $1$ in ne k $f(0) = 0$. Torej $f$ ni Ces\`{a}ro zvezna v točki $0$.
+\end{zgled}
+
+Kot smo ugotovili, je vsaka funkcija oblike $f(x) = Ax + B$ Ces\`{a}ro zvezna. Izkaže se, da so to tudi vse Ces\`{a}ro zvezne funkcije. Dokaz temelji na~\cite{2}.
 
 \begin{izrek}
+    \label{klaszvez}
     Naj bo $f: \mathbb{R} \rightarrow \mathbb{R}$ funkcija. Naslednje trditve so ekvivalentne.
     \begin{enumerate}
         \item Funkcija $f$ je Ces\`{a}ro zvezna v točki $0$.
@@ -113,36 +125,43 @@ Kot smo ugotovili, je vsaka funkcija oblike $f(x) = Ax + B$ Ces\`{a}ro zvezna. I
 
 
 \section{Ces\`{a}ro odvedljivost}
+
+Sedaj bomo vpeljali še pojem Ces\`{a}ro odvedljivosti. Kakšna je motivacija za naslednjo definicijo smo obravnavali že v uvodu.
+
 \begin{definicija}
     Funkcija $f: \mathbb{R} \rightarrow \mathbb{R}$ je Ces\`{a}ro odvedljiva v točki $a \in \mathbb{R}$, če obstaja število $f'(a) \in \mathbb{R}$, da za vsako zaporedje $(a_n)$ s členi različnimi od $a$, ki Ces\`{a}ro konvergira proti $a$, zaporedje diferenčnih kvocientov $(\frac{f(a_n)-f(a)}{a_n-a})$ Ces\`{a}ro konvergira proti $f'(a)$. Številu $f'(a)$ v takem primeru rečemo Ces\`{a}ro odvod funkcije $f$ v točki $a$. Pravimo, da je $f$ odvedljiva, če je odvedljiva v vsaki točki $a \in \mathbb{R}$.
 \end{definicija}
 
 Oglejmo si nekaj primerov funkcij in poskusimo ugotoviti, če so Ces\`{a}ro odvedljive.
 
-\subsection*{Primeri}
-\begin{enumerate}
-    \item Naj bo $f: \mathbb{R} \rightarrow \mathbb{R}$ funkcija oblike $f(x) = Ax^2 + Bx + C$ za neke $A, B, C \in \mathbb{R}$. Naj bo $(a_n)$ poljubno Ces\`{a}ro konvergentno zaporedje s Ces\`{a}ro limito $a$, ki ima vse člene različne od $a$. Velja 
+\begin{zgled}
+    \label{vseodv}
+    Naj bo $f: \mathbb{R} \rightarrow \mathbb{R}$ funkcija oblike $f(x) = Ax^2 + Bx + C$ za neke $A, B, C \in \mathbb{R}$. Naj bo $(a_n)$ poljubno Ces\`{a}ro konvergentno zaporedje s Ces\`{a}ro limito $a$, ki ima vse člene različne od $a$. Velja 
     \begin{align*}
         \frac{f(a_n)-f(a)}{a_n-a} &= \frac{(Aa_n^2 + Ba_n + C)-(Aa^2 + Ba + C)}{a_n-a}\\
         &= \frac{A(a_n-a)(a_n+a) + B(a_n-a)}{a_n-a}\\
         &= A(a_n+a) + B \leadsto 2Aa + B,
     \end{align*}
     torej je $f$ Ces\`{a}ro odvedljiva in je $2Ax + B$ njen Ces\`{a}ro odvod. Opazimo lahko, da je Ces\`{a}ro odvod enak odvodu.
-    \item Naj bo zdaj $f: \mathbb{R} \rightarrow \mathbb{R}$ funkcija s predpisom $f(x) = x^3$. Velja $(-1)^n \leadsto 0$, ampak 
+\end{zgled}
+
+\begin{zgled}
+    Naj bo zdaj $f: \mathbb{R} \rightarrow \mathbb{R}$ funkcija s predpisom $f(x) = x^3$. Velja $(-1)^n \leadsto 0$, ampak 
     $$\frac{(-1)^3-0^3}{(-1)-0} = 1 \leadsto 1 \neq 0 = f(0).$$ 
     Torej $f$ ni Ces\`{a}ro odvedljiva v točki 0.
-\end{enumerate}
+\end{zgled}
 
-Vemo že, da je $f: \mathbb{R} \rightarrow \mathbb{R}$ zvezna v točki $a \in \mathbb{R}$ natanko tedaj, ko obstaja limita $f$ v točki $a$ in je ta limita enaka $f(a)$. Podobno velja tudi za Ces\`{a}ro zveznost, kar nam pove naslednja lema.
+Vemo že, da je $f: \mathbb{R} \rightarrow \mathbb{R}$ zvezna v točki $a \in \mathbb{R}$ natanko tedaj, ko obstaja limita $f$ v točki $a$ in je ta limita enaka $f(a)$. Podobno velja tudi za Ces\`{a}ro zveznost, kar nam pove naslednja lema. V dokazu te leme in naslednjega izreka bomo sledili~\cite{1}.
 \begin{lema}
+    \label{lema}
     Naj bo $f: \mathbb{R} \rightarrow \mathbb{R}$ funkcija. Naj za vsako zaporedje $(a_n)$ s členi različnimi od $0$, ki Ces\`{a}ro konvergira proti $0$, velja $f(a_n) \leadsto f(0)$. Potem je $f$ Ces\`{a}ro zvezna v točki $0$.
 \end{lema}
 \begin{dokaz}
-    Predpostaviti smemo, da velja $f(0) = 0$. Podobno kot pri dokazu izreka lahko dokažemo, da velja $f(a+b) = f(a) + f(b)$ za neničelna $a, b \in \mathbb{R}$. Če je katero od obeh števil enako $0$, pa to očitno velja. Torej je $f$ aditivna. 
+    Predpostaviti smemo, da velja $f(0) = 0$. Podobno kot pri dokazu izreka \ref{klaszvez} lahko dokažemo, da velja $f(a+b) = f(a) + f(b)$ za neničelna $a, b \in \mathbb{R}$. Če je katero od obeh števil enako $0$, pa to očitno velja. Torej je $f$ aditivna. Velja tudi $f(-a) = -f(a)$ za vse $a \in \R$.
     
     Naj bo $(a_n)$ poljubno zaporedje, za katero velja $a_n \leadsto 0$. Pokazati želimo, da velja $f(a_n) \leadsto f(0) = 0$. To bomo storili tako, da bomo skonstruirali zaporedje $(b_n)$ s členi različnimi od $0$, ki se bo malo razlikovalo od zaporedja $(a_n)$, tako da bo veljalo $a_n - b_n \leadsto 0$ in $f(a_n) - f(b_n) \leadsto 0$.
 
-    Ker je množica $\R$ neštevna, množica $\{a_n \mid n \in \N\} \cup \{-a_n \mid n \in \N\}$ pa števna, lahko izberemo $\delta \in \R$, da za vsak $n \in \N$ velja $\delta \neq a_n$ in $\delta \neq -a_n$. Definirajmo $b_n = a_n + (-1)^n \delta$. Za vse $n \in \N$ je $b_n \neq 0$, torej je $(b_n)$ zaporedje z neničelnimi členi. Če je $n$ sod, velja $b_1 + \ldots + b_n = a_1 + \ldots + a_n$, če je $n$ lih, pa je $b_1 + \ldots + b_n = a_1 + \ldots + a_n - \delta$. Od tod sledi
+    Ker je množica $\R$ neštevna, množica $\{a_n \mid n \in \N\} \cup \{-a_n \mid n \in \N\}$ pa števna, lahko izberemo $\delta \in \R$, da za vsak $n \in \N$ velja $\delta \neq a_n$ in $\delta \neq -a_n$. Definirajmo $b_n = a_n + (-1)^n \delta$. Za vse $n \in \N$ je potem $b_n \neq 0$, torej je $(b_n)$ zaporedje z neničelnimi členi. Če je $n$ sod, velja $b_1 + \ldots + b_n = a_1 + \ldots + a_n$, če je $n$ lih, pa je $b_1 + \ldots + b_n = a_1 + \ldots + a_n - \delta$. Od tod sledi
     $$
     \overline{a}_n - \overline{b}_n = \begin{cases}
         0; & n \ \text{sod}\\
@@ -163,7 +182,10 @@ Vemo že, da je $f: \mathbb{R} \rightarrow \mathbb{R}$ zvezna v točki $a \in \m
     Pokazali smo že, da zaporedje $(b_n)$ Ces\`{a}ro konvergira k $0$, ker pa ima le neničelne člene, po predpostavki velja $f(b_n) \leadsto f(0) = 0$. Ker velja tudi $f(a_n) - f(b_n) \leadsto 0$, lahko zaključimo, da $(f(a_n))$ Ces\`{a}ro konvergira k $0$, torej je $f$ res Ces\`{a}ro zvezna v točki $0$.
 \end{dokaz}
 
+V zgledu \ref{vseodv} smo pokazali, da so vse funkcije oblike $f(x) = Ax^2 + Bx + C$ Ces\`{a}ro odvedljive. V naslednjem izreku bomo pokazali, da so to tudi vse Ces\`{a}ro odvedljive funkcije.
+
 \begin{izrek}
+    \label{klasodv}
     Naj bo $f: \mathbb{R} \rightarrow \mathbb{R}$ funkcija. Naslednje trditve so ekvivalentne.
     \begin{enumerate}
         \item Funkcija $f$ je Ces\`{a}ro odvedljiva v točki $0$.
@@ -181,14 +203,14 @@ Vemo že, da je $f: \mathbb{R} \rightarrow \mathbb{R}$ zvezna v točki $a \in \m
     $$
     Naj bo $(a_n)$ zaporedje s členi različnimi od $0$, da velja $a_n \leadsto 0$. Potem velja 
     $$g(a_n) = \frac{f(a_n)-f(0)}{a_n-0} \leadsto f'(0) = g(0),$$
-    po definiciji Ces\`{a}ro odvoda $f$ v točki $0$. Po lemi je $g$ Ces\`{a}ro zvezna v točki $0$, zato je po izreku oblike $g(x) = Ax + B$ za neka $A, B \in \mathbb{R}$. Potem pa je 
+    po definiciji Ces\`{a}ro odvoda $f$ v točki $0$. Po lemi \ref{lema} je $g$ Ces\`{a}ro zvezna v točki $0$, zato je po izreku \ref{klaszvez} oblike $g(x) = Ax + B$ za neka $A, B \in \mathbb{R}$. Potem pa je 
     $f(x) = xg(x) + f(0) = Ax^2 + Bx + C$ za $C = f(0)$.
 
     $(3) \Rightarrow (2): $ To smo pokazali v zgornjem zgledu.
 
     $(2) \Rightarrow (1): $ Če je $f$ Ces\`{a}ro odvedljiva, je po definiciji Ces\`{a}ro odvedljiva tudi v točki $0$.
 \end{dokaz}
-Končno smo klasificirali Ces\`{a}ro zvezne in Ces\`{a}ro odvedljive funkcije. Opazimo, da obstajajo funkcije, ki so Ces\`{a}ro odvedljive, ampak niso Ces\`{a}ro zvezne. Takšna funkcije je na primer $x \mapsto x^2$. To je presenetljivo, saj vemo, da je funkcija zvezna v neki točki, če je odvedljiva v tej točki. Za Ces\`{a}ro zveznost in Ces\`{a}ro odvedljivost pa se izkaže, da to ne velja.
+Končno smo klasificirali Ces\`{a}ro zvezne in Ces\`{a}ro odvedljive funkcije. Opazimo, da obstajajo funkcije, ki so Ces\`{a}ro odvedljive, ampak niso Ces\`{a}ro zvezne. Takšna funkcija je na primer $x \mapsto x^2$. To je presenetljivo, saj vemo, da je funkcija zvezna v neki točki, če je odvedljiva v tej točki. Za Ces\`{a}ro zveznost in Ces\`{a}ro odvedljivost pa se izkaže, da to ne velja.
 
 
 

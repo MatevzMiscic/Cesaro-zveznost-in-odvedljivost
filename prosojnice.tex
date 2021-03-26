@@ -172,18 +172,27 @@
 
 \begin{frame}
     \begin{zgled}
-        Naj bo $m \in \mathbb{N}$ in $a_1, a_2, \ldots, a_m \in \mathbb{R}$. Zanima nas, kdaj zaporedje $a_1, a_2, \ldots, a_m, a_1, a_2, \ldots$ Ces\`{a}ro konvergira proti $0$. Naj bo $A := a_1 + a_2 + \ldots + a_m$. Ker za vse $k \in \mathbb{N}$ velja $\overline{a}_{km} = \frac{A}{m}$, je enakost $A = 0$ potreben pogoj za $a_n \leadsto 0$. Naj bo torej $A = 0$. Zaporedje delnih vsot zaporedja $(a_n)$ je potem periodično, zato je omejeno. Sledi, da zaporedje aritmetičnih sredin konvergira proti $0$. Torej $(a_n)$ Ces\`{a}ro konvergira proti $0$ natanko tedaj, ko velja $A = 0$.
+        Naj bo $m \in \mathbb{N}$ in $a_1, a_2, \ldots, a_m \in \mathbb{R}$. Zanima nas, kdaj zaporedje $a_1, a_2, \ldots, a_m, a_1, a_2, \ldots$ Ces\`{a}ro konvergira proti $0$. 
+        \pause
+        
+        \medskip
+        Naj bo $A := a_1 + a_2 + \ldots + a_m$. Ker za vse $k \in \mathbb{N}$ velja $\overline{a}_{km} = \frac{A}{m}$, je enakost $A = 0$ potreben pogoj za $a_n \leadsto 0$. 
+        \pause
+
+        Naj bo torej $A = 0$. Zaporedje delnih vsot zaporedja $(a_n)$ je potem periodično, zato je omejeno. Sledi, da zaporedje aritmetičnih sredin konvergira proti $0$. 
+        \pause
+
+        Torej $(a_n)$ Ces\`{a}ro konvergira proti $0$ natanko tedaj, ko velja $A = 0$.
     \end{zgled}
-    %\vspace{100pt}
+    \visible<2->{
     \begin{figure}
         \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
         \begin{axis}[
         x=0.7cm,y=0.7cm,axis lines=middle,
         ymajorgrids=true,xmajorgrids=true,
-        xmin=-0.5,xmax=12.5,ymin=-2.5,ymax=2.5,
+        xmin=-0.5,xmax=12.5,ymin=-1.5,ymax=2.5,
         xtick={-2,-1,...,19},
         ytick={-5,-4,...,6},]
-        \clip(-2.098760183145331,-5.918856829532279) rectangle (19.334790664437605,6.407246048049231);
         \begin{scriptsize}
             \draw [fill=exrurv] (1,0.95) circle (3.5pt);
             \draw [fill=rvwvcq] (1,1.05) circle (3.5pt);
@@ -213,6 +222,7 @@
         \end{axis}
         \end{tikzpicture}
     \end{figure}
+    }
 \end{frame}
 
 
@@ -317,9 +327,13 @@
         Če je funkcija $f$ Ces\`{a}ro zvezna v točki $0$, je oblike $f(x) = Ax + B$ za neki realni števili $A, B \in \mathbb{R}$.
     \end{block}
     \begin{dokaz}\renewcommand{\qedsymbol}{}
-        Tako definirano zaporedje $(y_n)$ res zadošča $x_n = \overline{y}_n$ za vse $n \in \mathbb{N}$. Ker je $x_n \rightarrow 0$, je $y_n \leadsto 0$ po definiciji, zato iz Ces\`{a}ro zveznosti funkcije $g$ v $0$ sledi $g(y_n) \leadsto g(0) = 0$. Iz tega, kar smo pokazali v prejšnjih odstavkih, potem sledi 
+        Ker je $x_n \rightarrow 0$, je $y_n \leadsto 0$ po definiciji, zato iz Ces\`{a}ro zveznosti funkcije $g$ v $0$ sledi $g(y_n) \leadsto g(0) = 0$. 
+        \pause
+        Iz tega, kar smo pokazali v prejšnjih odstavkih, potem sledi 
         $$g(x_n) = g(\overline{y}_n) = g(\frac{y_1 + \ldots + y_n}{n}) = \frac{g(y_1) + \ldots + g(y_n)}{n} \rightarrow 0.$$
-        Torej je $g$ zvezna v $0$. Ker je $g(x_0 + x) = g(x_0) + g(x)$, je zvezna tudi v vsaki drugi točki $x_0 \in \mathbb{R}$.
+        Torej je $g$ zvezna v $0$. 
+        \pause
+        Ker je $g(x_0 + x) = g(x_0) + g(x)$, je zvezna tudi v vsaki drugi točki $x_0 \in \mathbb{R}$.
     \end{dokaz}
 \end{frame}
 
@@ -362,7 +376,12 @@
 \begin{frame}
     \begin{zgled}
         \label{vseodv}
-        Naj bo $f: \mathbb{R} \rightarrow \mathbb{R}$ funkcija oblike $f(x) = Ax^2 + Bx + C$ za neke $A, B, C \in \mathbb{R}$. Naj bo $(a_n)$ poljubno Ces\`{a}ro konvergentno zaporedje s Ces\`{a}ro limito $a$, ki ima vse člene različne od $a$. Velja 
+        Naj bo $f: \mathbb{R} \rightarrow \mathbb{R}$ funkcija oblike $f(x) = Ax^2 + Bx + C$ za neke $A, B, C \in \mathbb{R}$. 
+        \pause
+        
+        Naj bo $(a_n)$ poljubno Ces\`{a}ro konvergentno zaporedje s Ces\`{a}ro limito $a$, ki ima vse člene različne od $a$. 
+        \pause
+        Velja 
         \begin{align*}
             \frac{f(a_n)-f(a)}{a_n-a} &= \frac{(Aa_n^2 + Ba_n + C)-(Aa^2 + Ba + C)}{a_n-a}\\
             &= \frac{A(a_n-a)(a_n+a) + B(a_n-a)}{a_n-a}\\

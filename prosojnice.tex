@@ -1,4 +1,4 @@
-\documentclass{beamer}
+\documentclass[10]{beamer}
 \usepackage[slovene]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -51,7 +51,7 @@
         \pause
         
         \medskip
-        Funkcija $f$ odvedljiva v $a$, natanko tedaj, ko obstaja število $L \in \mathbb{R}$, da za vsako zaporedje $(a_n)$ s členi različnimi od $a$, ki konvergira proti $a$, zaporedje $(\frac{f(x)-f(a_n)}{x-a_n})$ konvergira proti $L$.
+        Funkcija $f$ odvedljiva v $a$, natanko tedaj, ko obstaja število $L \in \mathbb{R}$, da za vsako zaporedje $(a_n)$ s členi različnimi od $a$, ki konvergira proti $a$, zaporedje $(\frac{f(a_n)-f(a)}{a_n-a})$ konvergira proti $L$.
     \end{ponovitev}
 \end{frame}
 
@@ -71,7 +71,7 @@
     \end{definicija}
     \pause
     \begin{definicija}
-        Realno zaporedje $(a_n)$ \textbf{Ces\`{a}ro konvergira}, če konvergira njeno zaporedje aritmetičnih sredin $(\overline{a}_n)$.
+        Realno zaporedje $(a_n)$ \textbf{Ces\`{a}ro konvergira}, če konvergira njegovo zaporedje aritmetičnih sredin $(\overline{a}_n)$.
     \end{definicija}
     \pause
     \begin{oznaka}
@@ -93,22 +93,22 @@
         xtick={-6,-5,...,12},ytick={-8,-7,...,6},]
         \clip(-6.257075632047947,-8.323024128584796) rectangle (12.3817309640345,6.5690503527635205);
         \begin{scriptsize}
-        \draw [fill=rvwvcq] (2,1) circle (2.5pt);
-        \draw [fill=rvwvcq] (3,-1) circle (2.5pt);
-        \draw [fill=rvwvcq] (4,1) circle (2.5pt);
-        \draw [fill=rvwvcq] (5,-1) circle (2.5pt);
-        \draw [fill=rvwvcq] (6,1) circle (2.5pt);
-        \draw [fill=rvwvcq] (7,-1) circle (2.5pt);
-        \draw [fill=rvwvcq] (8,1) circle (2.5pt);
-        \draw [fill=exrurv] (2,0) circle (2.5pt);
-        \draw [fill=exrurv] (4,0) circle (2.5pt);
-        \draw [fill=exrurv] (6,0) circle (2.5pt);
-        \draw [fill=exrurv] (3,-0.3333333333333333) circle (2.5pt);
-        \draw [fill=exrurv] (5,-0.2) circle (2.5pt);
-        \draw [fill=exrurv] (7,-0.14285714285714285) circle (2.5pt);
-        \draw [fill=exrurv] (8,0) circle (2.5pt);
-        \draw [fill=exrurv] (1,-0.95) circle (2.5pt);
-        \draw [fill=rvwvcq] (1,-1.05) circle (2.5pt);
+        \draw [fill=rvwvcq] (2,1) circle (3.5pt);
+        \draw [fill=rvwvcq] (3,-1) circle (3.5pt);
+        \draw [fill=rvwvcq] (4,1) circle (3.5pt);
+        \draw [fill=rvwvcq] (5,-1) circle (3.5pt);
+        \draw [fill=rvwvcq] (6,1) circle (3.5pt);
+        \draw [fill=rvwvcq] (7,-1) circle (3.5pt);
+        \draw [fill=rvwvcq] (8,1) circle (3.5pt);
+        \draw [fill=exrurv] (2,0) circle (3.5pt);
+        \draw [fill=exrurv] (4,0) circle (3.5pt);
+        \draw [fill=exrurv] (6,0) circle (3.5pt);
+        \draw [fill=exrurv] (3,-0.3333333333333333) circle (3.5pt);
+        \draw [fill=exrurv] (5,-0.2) circle (3.5pt);
+        \draw [fill=exrurv] (7,-0.14285714285714285) circle (3.5pt);
+        \draw [fill=exrurv] (8,0) circle (3.5pt);
+        \draw [fill=exrurv] (1,-0.95) circle (3.5pt);
+        \draw [fill=rvwvcq] (1,-1.05) circle (3.5pt);
         \end{scriptsize}
         \end{axis}
         \end{tikzpicture}
@@ -121,25 +121,98 @@
         \visible<2->{Prvi člen naj bo enak $2$.} 
         \visible<3->{Naslednjih nekaj členov bo enakih $-2$. Takih členov mora biti dovolj, da bo aritmetična sredina padla pod $-1$.} 
         \visible<4->{Nato spet dodajmo dovolj členov enakih $2$, da bo aritmetična sredina narasla nad $1$.} 
-        \visible<5->{S ponavljanjem take konstrukcije dobimo omejeno zaporedje, ki ni Ces\`{a}ro konvergentno, saj zaporedje aritmetičnih sredin oscilira med $-1$ in $1$.}
     \end{zgled}
+
     \begin{figure}
-        \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=0.7cm,y=0.7cm]
+        \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
         \begin{axis}[
         x=0.7cm,y=0.7cm,axis lines=middle,
         ymajorgrids=true,xmajorgrids=true,
-        xmin=-0.5,xmax=8.5,ymin=-2,ymax=2,
-        xtick={-6,-5,...,12},ytick={-8,-7,...,6},]
+        xmin=-0.5,xmax=12.5,ymin=-2.5,ymax=2.5,
+        xtick={-2,-1,...,19},
+        ytick={-5,-4,...,6},]
+        \clip(-2.098760183145331,-5.918856829532279) rectangle (19.334790664437605,6.407246048049231);
+        \begin{scriptsize}
+        \only<2->{
+            \draw [fill=exrurv] (1,1.95) circle (3.5pt);
+            \draw [fill=rvwvcq] (1,2.05) circle (3.5pt);
+        }
+        \only<3->{
+            \draw [fill=exrurv] (2,0) circle (3.5pt);
+            \draw [fill=rvwvcq] (2,-2) circle (3.5pt);
+            \draw [fill=exrurv] (3,-0.6666666666666666) circle (3.5pt);
+            \draw [fill=rvwvcq] (3,-2) circle (3.5pt);
+            \draw [fill=exrurv] (4,-1) circle (3.5pt);
+            \draw [fill=rvwvcq] (4,-2) circle (3.5pt);
+        }
+        \only<4->{
+            \draw [fill=exrurv] (5,-0.4) circle (3.5pt);
+            \draw [fill=rvwvcq] (5,2) circle (3.5pt);
+            \draw [fill=exrurv] (6,0) circle (3.5pt);
+            \draw [fill=rvwvcq] (6,2) circle (3.5pt);
+            \draw [fill=rvwvcq] (7,2) circle (3.5pt);
+            \draw [fill=exrurv] (7,0.2857142857142857) circle (3.5pt);
+            \draw [fill=rvwvcq] (8,2) circle (3.5pt);
+            \draw [fill=exrurv] (8,0.5) circle (3.5pt);
+            \draw [fill=rvwvcq] (9,2) circle (3.5pt);
+            \draw [fill=exrurv] (9,0.6666666666666666) circle (3.5pt);
+            \draw [fill=rvwvcq] (10,2) circle (3.5pt);
+            \draw [fill=exrurv] (10,0.8) circle (3.5pt);
+            \draw [fill=rvwvcq] (11,2) circle (3.5pt);
+            \draw [fill=exrurv] (11,0.9090909090909091) circle (3.5pt);
+            \draw [fill=rvwvcq] (12,2) circle (3.5pt);
+            \draw [fill=exrurv] (12,1) circle (3.5pt);
+        }
+        \end{scriptsize}
         \end{axis}
         \end{tikzpicture}
     \end{figure}
+
 \end{frame}
 
 \begin{frame}
     \begin{zgled}
         Naj bo $m \in \mathbb{N}$ in $a_1, a_2, \ldots, a_m \in \mathbb{R}$. Zanima nas, kdaj zaporedje $a_1, a_2, \ldots, a_m, a_1, a_2, \ldots$ Ces\`{a}ro konvergira proti $0$. Naj bo $A := a_1 + a_2 + \ldots + a_m$. Ker za vse $k \in \mathbb{N}$ velja $\overline{a}_{km} = \frac{A}{m}$, je enakost $A = 0$ potreben pogoj za $a_n \leadsto 0$. Naj bo torej $A = 0$. Zaporedje delnih vsot zaporedja $(a_n)$ je potem periodično, zato je omejeno. Sledi, da zaporedje aritmetičnih sredin konvergira proti $0$. Torej $(a_n)$ Ces\`{a}ro konvergira proti $0$ natanko tedaj, ko velja $A = 0$.
     \end{zgled}
-    \vspace{100pt}
+    %\vspace{100pt}
+    \begin{figure}
+        \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1cm,y=1cm]
+        \begin{axis}[
+        x=0.7cm,y=0.7cm,axis lines=middle,
+        ymajorgrids=true,xmajorgrids=true,
+        xmin=-0.5,xmax=12.5,ymin=-2.5,ymax=2.5,
+        xtick={-2,-1,...,19},
+        ytick={-5,-4,...,6},]
+        \clip(-2.098760183145331,-5.918856829532279) rectangle (19.334790664437605,6.407246048049231);
+        \begin{scriptsize}
+            \draw [fill=exrurv] (1,0.95) circle (3.5pt);
+            \draw [fill=rvwvcq] (1,1.05) circle (3.5pt);
+            \draw [fill=exrurv] (2,0.0) circle (3.5pt);
+            \draw [fill=rvwvcq] (2,-1) circle (3.5pt);
+            \draw [fill=exrurv] (3,0.6666666666666666) circle (3.5pt);
+            \draw [fill=rvwvcq] (3,2) circle (3.5pt);
+            \draw [fill=exrurv] (4,0.75) circle (3.5pt);
+            \draw [fill=rvwvcq] (4,1) circle (3.5pt);
+            \draw [fill=exrurv] (5,0.4) circle (3.5pt);
+            \draw [fill=rvwvcq] (5,-1) circle (3.5pt);
+            \draw [fill=exrurv] (6,0.6666666666666666) circle (3.5pt);
+            \draw [fill=rvwvcq] (6,2) circle (3.5pt);
+            \draw [fill=exrurv] (7,0.7142857142857143) circle (3.5pt);
+            \draw [fill=rvwvcq] (7,1) circle (3.5pt);
+            \draw [fill=exrurv] (8,0.5) circle (3.5pt);
+            \draw [fill=rvwvcq] (8,-1) circle (3.5pt);
+            \draw [fill=exrurv] (9,0.6666666666666666) circle (3.5pt);
+            \draw [fill=rvwvcq] (9,2) circle (3.5pt);
+            \draw [fill=exrurv] (10,0.7) circle (3.5pt);
+            \draw [fill=rvwvcq] (10,1) circle (3.5pt);
+            \draw [fill=exrurv] (11,0.5454545454545454) circle (3.5pt);
+            \draw [fill=rvwvcq] (11,-1) circle (3.5pt);
+            \draw [fill=exrurv] (12,0.6666666666666666) circle (3.5pt);
+            \draw [fill=rvwvcq] (12,2) circle (3.5pt);
+        \end{scriptsize}
+        \end{axis}
+        \end{tikzpicture}
+    \end{figure}
 \end{frame}
 
 
@@ -344,14 +417,14 @@
         po definiciji Ces\`{a}ro odvoda $f$ v točki $0$. 
         \pause
         
-        Po lemi \ref{lema} je $g$ Ces\`{a}ro zvezna v točki $0$, zato je po izreku \ref{klaszvez} oblike $g(x) = Ax + B$ za neka $A, B \in \mathbb{R}$. Potem pa je 
+        Po lemi je $g$ Ces\`{a}ro zvezna v točki $0$, zato je po izreku oblike $g(x) = Ax + B$ za neka $A, B \in \mathbb{R}$. Potem pa je 
         $f(x) = xg(x) + f(0) = Ax^2 + Bx + C$ za $C = f(0)$.
     \end{dokaz}
 \end{frame}
 
 \begin{frame}
     \begin{dokaz}
-        $(3) \Rightarrow (2): $ To smo pokazali v zgledu \ref{vseodv}.
+        $(3) \Rightarrow (2): $ To smo pokazali v zgornjem zgledu.
         \pause
 
         \medskip

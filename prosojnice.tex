@@ -1,4 +1,4 @@
-\documentclass[10]{beamer}
+\documentclass[10pt,hyperref={unicode}]{beamer}
 \usepackage[slovene]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -35,7 +35,7 @@
 
 \title{Ces\`{a}ro zveznost in odvedljivost}
 \author{Matevž Miščič}
-\date{2. april 2020}
+\date{2. april 2021}
 
 
 
@@ -231,7 +231,9 @@
 
 \begin{frame}
     \begin{definicija}
-        Funkcija $f: \mathbb{R} \rightarrow \mathbb{R}$ je Ces\`{a}ro zvezna v točki $a \in \mathbb{R}$, če za vsako zaporedje $(a_n)$, ki Ces\`{a}ro konvergira proti $a$, zaporedje $(f(a_n))$ Ces\`{a}ro konvergira proti $f(a)$. Pravimo, da je $f$ zvezna, če je zvezna v vsaki točki $a \in \mathbb{R}$.
+        Funkcija $f: \mathbb{R} \rightarrow \mathbb{R}$ je \textbf{Ces\`{a}ro zvezna v točki $a \in \mathbb{R}$}, če za vsako zaporedje $(a_n)$, ki Ces\`{a}ro konvergira proti $a$, zaporedje $(f(a_n))$ Ces\`{a}ro konvergira proti $f(a)$. 
+        
+        Pravimo, da je $f$ Ces\`{a}ro zvezna, če je \textbf{Ces\`{a}ro zvezna} v vsaki točki $a \in \mathbb{R}$.
     \end{definicija}
 \end{frame}
 
@@ -355,21 +357,22 @@
 \end{frame}
 
 
+
 \section{Ces\`{a}ro odvedljivost}
 
 \begin{frame}
     \begin{definicija}
-        Funkcija $f: \mathbb{R} \rightarrow \mathbb{R}$ je Ces\`{a}ro odvedljiva v točki $a \in \mathbb{R}$, če obstaja število $f'(a) \in \mathbb{R}$, da za vsako zaporedje $(a_n)$ s členi različnimi od $a$, ki Ces\`{a}ro konvergira proti $a$, zaporedje diferenčnih kvocientov 
+        Funkcija $f: \mathbb{R} \rightarrow \mathbb{R}$ je \textbf{Ces\`{a}ro odvedljiva v točki $a \in \mathbb{R}$}, če obstaja število $f'(a) \in \mathbb{R}$, da za vsako zaporedje $(a_n)$ s členi različnimi od $a$, ki Ces\`{a}ro konvergira proti $a$, zaporedje diferenčnih kvocientov 
         $$(\frac{f(a_n)-f(a)}{a_n-a})$$ 
         Ces\`{a}ro konvergira proti $f'(a)$. 
         \pause
 
         \medskip
-        Številu $f'(a)$ v takem primeru rečemo Ces\`{a}ro odvod funkcije $f$ v točki $a$. 
+        Številu $f'(a)$ v takem primeru rečemo \textbf{Ces\`{a}ro odvod funkcije $f$ v točki $a$}. 
         \pause
 
         \medskip
-        Pravimo, da je $f$ odvedljiva, če je odvedljiva v vsaki točki $a \in \mathbb{R}$.
+        Pravimo, da je $f$ \textbf{Ces\`{a}ro odvedljiva}, če je Ces\`{a}ro odvedljiva v vsaki točki $a \in \mathbb{R}$.
     \end{definicija}
 \end{frame}
 

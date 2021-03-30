@@ -51,7 +51,7 @@
         \pause
         
         \medskip
-        Funkcija $f$ odvedljiva v $a$, natanko tedaj, ko obstaja število $L \in \mathbb{R}$, da za vsako zaporedje $(a_n)$ s členi različnimi od $a$, ki konvergira proti $a$, zaporedje $(\frac{f(a_n)-f(a)}{a_n-a})$ konvergira proti $L$.
+        Funkcija $f$ odvedljiva v $a$, natanko tedaj, ko obstaja število $L \in \mathbb{R}$, da za vsako zaporedje $(a_n)$ s členi različnimi od $a$, ki konvergira proti $a$, zaporedje $\left(\frac{f(a_n)-f(a)}{a_n-a}\right)$ konvergira proti $L$.
     \end{ponovitev}
 \end{frame}
 
@@ -301,9 +301,9 @@
         \pause
 
         Naj bo zdaj $\frac{m}{n} \in \mathbb{Q}$ poljubno racionalno število. Velja 
-        $$mg(x) = g(mx) = g(n\frac{m}{n}x) = ng(\frac{m}{n}x)$$ 
+        $$mg(x) = g(mx) = g\left( n\frac{m}{n}x \right) = ng\left(\frac{m}{n}x\right)$$ 
         oziroma 
-        $$\frac{m}{n}g(x) = g(\frac{m}{n}x),$$ 
+        $$\frac{m}{n}g(x) = g \left(\frac{m}{n}x \right),$$ 
         kar smo želeli dokazati.
     \end{dokaz}
 \end{frame}
@@ -332,7 +332,7 @@
         Ker je $x_n \rightarrow 0$, je $y_n \leadsto 0$ po definiciji, zato iz Ces\`{a}ro zveznosti funkcije $g$ v $0$ sledi $g(y_n) \leadsto g(0) = 0$. 
         \pause
         Iz tega, kar smo pokazali v prejšnjih odstavkih, potem sledi 
-        $$g(x_n) = g(\overline{y}_n) = g(\frac{y_1 + \ldots + y_n}{n}) = \frac{g(y_1) + \ldots + g(y_n)}{n} \rightarrow 0.$$
+        $$g(x_n) = g(\overline{y}_n) = g\left( \frac{y_1 + \ldots + y_n}{n} \right) = \frac{g(y_1) + \ldots + g(y_n)}{n} \rightarrow 0.$$
         Torej je $g$ zvezna v $0$. 
         \pause
         Ker je $g(x_0 + x) = g(x_0) + g(x)$, je zvezna tudi v vsaki drugi točki $x_0 \in \mathbb{R}$.
@@ -363,7 +363,7 @@
 \begin{frame}
     \begin{definicija}
         Funkcija $f: \mathbb{R} \rightarrow \mathbb{R}$ je \textbf{Ces\`{a}ro odvedljiva v točki $a \in \mathbb{R}$}, če obstaja število $f'(a) \in \mathbb{R}$, da za vsako zaporedje $(a_n)$ s členi različnimi od $a$, ki Ces\`{a}ro konvergira proti $a$, zaporedje diferenčnih kvocientov 
-        $$(\frac{f(a_n)-f(a)}{a_n-a})$$ 
+        $$\left( \frac{f(a_n)-f(a)}{a_n-a} \right)$$ 
         Ces\`{a}ro konvergira proti $f'(a)$. 
         \pause
 

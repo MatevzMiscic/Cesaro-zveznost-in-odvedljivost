@@ -34,7 +34,9 @@
 \newenvironment{dokaz}{\begin{proof}[\bfseries\upshape\proofname]}{\end{proof}}
 
 \title{Ces\`{a}ro zveznost in odvedljivost}
-\author{Matevž Miščič}
+\author{Matevž Miščič \\
+Fakulteta za matematiko in fiziko \\
+Oddelek za matematiko}
 \date{2. april 2021}
 
 
@@ -51,7 +53,7 @@
         \pause
         
         \medskip
-        Funkcija $f$ odvedljiva v $a$, natanko tedaj, ko obstaja število $L \in \mathbb{R}$, da za vsako zaporedje $(a_n)$ s členi različnimi od $a$, ki konvergira proti $a$, zaporedje $\left(\frac{f(a_n)-f(a)}{a_n-a}\right)_{n=1}^{\infty}$ konvergira proti $L$.
+        Funkcija $f$ odvedljiva v $a$, natanko tedaj, ko obstaja število $L \in \mathbb{R}$, da za vsako zaporedje $(a_n)_{n=1}^{\infty}$ s členi različnimi od $a$, ki konvergira proti $a$, zaporedje $\left(\frac{f(a_n)-f(a)}{a_n-a}\right)_{n=1}^{\infty}$ konvergira proti $L$.
     \end{ponovitev}
 \end{frame}
 
@@ -179,7 +181,7 @@
         Naj bo $A := a_1 + a_2 + \ldots + a_m$. Ker za vse $k \in \mathbb{N}$ velja $\overline{a}_{km} = \frac{A}{m}$, je enakost $A = 0$ potreben pogoj za $a_n \leadsto 0$. 
         \pause
 
-        Naj bo torej $A = 0$. Zaporedje delnih vsot zaporedja $(a_n)$ je potem periodično, zato je omejeno. Sledi, da zaporedje aritmetičnih sredin konvergira proti $0$. 
+        Naj bo torej $A = 0$. Zaporedje delnih vsot zaporedja $(a_n)_{n=1}^{\infty}$ je potem periodično, zato je omejeno. Sledi, da zaporedje aritmetičnih sredin konvergira proti $0$. 
         \pause
 
         Torej $(a_n)_{n=1}^{\infty}$ Ces\`{a}ro konvergira proti $0$ natanko tedaj, ko velja $A = 0$.
@@ -353,7 +355,7 @@
 
 \begin{frame}
     \begin{definicija}
-        Funkcija $f: \mathbb{R} \rightarrow \mathbb{R}$ je \textbf{Ces\`{a}ro odvedljiva v točki $a \in \mathbb{R}$}, če obstaja število $f'(a) \in \mathbb{R}$, da za vsako zaporedje $(a_n)$ s členi različnimi od $a$, ki Ces\`{a}ro konvergira proti $a$, zaporedje diferenčnih kvocientov 
+        Funkcija $f: \mathbb{R} \rightarrow \mathbb{R}$ je \textbf{Ces\`{a}ro odvedljiva v točki $a \in \mathbb{R}$}, če obstaja število $f'(a) \in \mathbb{R}$, da za vsako zaporedje $(a_n)_{n=1}^{\infty}$ s členi različnimi od $a$, ki Ces\`{a}ro konvergira proti $a$, zaporedje diferenčnih kvocientov 
         $$\left( \frac{f(a_n)-f(a)}{a_n-a} \right)_{n=1}^{\infty}$$ 
         Ces\`{a}ro konvergira proti $f'(a)$. 
         \pause
@@ -373,7 +375,7 @@
         Naj bo $f: \mathbb{R} \rightarrow \mathbb{R}$ funkcija oblike $f(x) = Ax^2 + Bx + C$ za neke $A, B, C \in \mathbb{R}$. 
         \pause
         
-        Naj bo $(a_n)$ poljubno Ces\`{a}ro konvergentno zaporedje s Ces\`{a}ro limito $a$, ki ima vse člene različne od $a$. 
+        Naj bo $(a_n)_{n=1}^{\infty}$ poljubno Ces\`{a}ro konvergentno zaporedje s Ces\`{a}ro limito $a$, ki ima vse člene različne od $a$. 
         \pause
         Velja 
         \begin{align*}
